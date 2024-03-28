@@ -1,0 +1,29 @@
+@import './themes/dark-theme.scss';
+@import './themes/light-theme.scss';
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', 'Oxygen','Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',sans-serif;
+  padding: 0 24px;
+  width: 600px;
+  height: 1024px;
+  background: var(--background-main);
+  color: var(--color-main-font);
+  .hide{
+    display: none !important;
+  }
+  .accent-bg {
+    background: linear-gradient(180deg, #DC0000 -170.67%, #6F0404 100%);
+  }
+}
+a {
+  color: var(--color-main-font);
+  text-decoration: none;
+  &:focus-visible {
+    outline: none;
+  }
+}
