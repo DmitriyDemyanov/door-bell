@@ -32,12 +32,12 @@ const INITIAL_STATE = {
   allSettings: [],
   allService: [],
 
-  addButtonWidget: {
-    icon: 'plus-icon',
-    title: '',
-    link: 'add-widget',
-    id: 4
-  }
+  // addButtonWidget: {
+  //   icon: 'plus-icon',
+  //   title: '',
+  //   link: 'add-widget',
+  //   id: 4
+  // }
 }
 
 export const widgetsReducer = (state = INITIAL_STATE,action) => {
@@ -67,7 +67,7 @@ export const widgetsReducer = (state = INITIAL_STATE,action) => {
       return {
         ...state,
         renderWidgets: [...state.renderWidgets,payload]
-        // renderWidgets: [...state.renderWidgets.splice(2,0,payload)]????????????????????????????????????????????????????
+        // renderWidgets: [...state.renderWidgets].splice(2,0,payload)
       }
     default:
       return state;
