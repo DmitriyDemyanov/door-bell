@@ -19,7 +19,6 @@ const AddWidget = () => {
       {
         widgetScreen.map((item,ind) => (<WidgetItem item={item} key={ind} />))
       }
-
     </AddWidgetContainer>
   )
 };

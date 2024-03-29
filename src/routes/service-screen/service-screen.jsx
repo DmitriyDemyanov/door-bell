@@ -7,7 +7,7 @@ import WidgetItem from "../../components/widget-item/widget-item.component";
 const ServiceScreen = () => {
 
   const allServiceItems = useSelector(getAllServicesItems);
-  console.log('getAllServicesItems>>>>>>>>>>>>',allServiceItems);
+  
   return (
     <div>
       {
