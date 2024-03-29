@@ -19,6 +19,7 @@ const WidgetItem = ({ item }) => {
     }
     if (!currentWidgetsRender.find((el) => el.id === item.id)) {
       dispatch(setRenderWidgets(item));
+
     }
   }
 

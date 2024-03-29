@@ -1,5 +1,7 @@
 import { WIDGETS_ACTION_TYPES } from "./widgets.types";
 
+const localStorMainWidgets = JSON.parse(localStorage.getItem('main-widgets'));
+
 const INITIAL_STATE = {
   widgetsFooter: [
     {
@@ -41,7 +43,7 @@ const INITIAL_STATE = {
       status: 'default'
     },
   ],
-  renderWidgets: [],
+  renderWidgets: localStorMainWidgets || [],
   allSettings: [
     {
       icon: 'weather-icon',
@@ -91,49 +93,22 @@ const INITIAL_STATE = {
   ],
   allService: [
     {
-      icon: 'weather-icon',
-      title: 'Overcast Clouds',
-      name: 'weather',
-      id: 5
-    },
-
-    {
-      icon: 'sleep-icon',
-      title: 'sleep mode',
-      name: 'sleep-mode',
-      id: 7
+      icon: 'cleaning-icon',
+      title: 'cleaning mode',
+      name: 'cleaning-mode',
+      id: 10
     },
     {
-      icon: 'audio-icon',
-      title: 'audio',
-      name: 'audio',
-      id: 8
+      icon: 'doors-icon',
+      title: 'doors',
+      name: 'doors',
+      id: 12
     },
     {
-      icon: 'user-icon',
-      title: 'user',
-      name: 'user',
-      id: 9
-    },
-
-    {
-      icon: 'info-icon',
-      title: 'information',
-      name: 'information',
-      id: 11
-    },
-
-    {
-      icon: 'system-icon',
-      title: 'system',
-      name: 'system',
-      id: 13
-    },
-    {
-      icon: 'language-icon',
-      title: 'language',
-      name: 'language',
-      id: 14
+      icon: 'transfers-icon',
+      title: 'transfers',
+      name: 'transfers',
+      id: 6
     },
   ],
 
