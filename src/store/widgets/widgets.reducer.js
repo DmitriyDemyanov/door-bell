@@ -1,79 +1,160 @@
 import { WIDGETS_ACTION_TYPES } from "./widgets.types";
 
 const INITIAL_STATE = {
-  widgetsFooter: [],
-  widgetsMain: [],
-  renderWidgets: [
+  widgetsFooter: [
+    {
+      icon: 'in-call-icon',
+      title: 'View Calls'
+
+    },
+    {
+      icon: 'leave-icon',
+      title: 'Leave'
+    },
+    {
+      icon: 'lock-icon',
+      title: 'Unlock Door'
+    },
+
+  ],
+  widgetsMain: [
     {
       icon: 'cameras-icon',
       title: 'cameras',
       link: '/add-widget',
-      id: 1
+      id: 'w-cameras',
+      status: 'default'
+
     },
     {
       icon: 'services-icon',
       title: 'services',
       link: '/',
-      id: 2
+      id: 'w-services',
+      status: 'default'
     },
     {
       icon: 'message-icon',
       title: 'message',
       link: '/',
-      id: 3
+      id: 'w-message',
+      status: 'default'
+    },
+  ],
+  renderWidgets: [],
+  allSettings: [
+    {
+      icon: 'weather-icon',
+      title: 'Overcast Clouds',
+      name: 'weather',
+      id: 5
+    },
+
+    {
+      icon: 'sleep-icon',
+      title: 'sleep mode',
+      name: 'sleep-mode',
+      id: 7
     },
     {
-      icon: 'plus-icon',
-      title: '',
-      link: 'add-widget',
-      id: 4
-    }
-  ],
-  allSettings: [],
-  allService: [],
+      icon: 'audio-icon',
+      title: 'audio',
+      name: 'audio',
+      id: 8
+    },
+    {
+      icon: 'user-icon',
+      title: 'user',
+      name: 'user',
+      id: 9
+    },
 
-  // addButtonWidget: {
-  //   icon: 'plus-icon',
-  //   title: '',
-  //   link: 'add-widget',
-  //   id: 4
-  // }
+    {
+      icon: 'info-icon',
+      title: 'information',
+      name: 'information',
+      id: 11
+    },
+
+    {
+      icon: 'system-icon',
+      title: 'system',
+      name: 'system',
+      id: 13
+    },
+    {
+      icon: 'language-icon',
+      title: 'language',
+      name: 'language',
+      id: 14
+    },
+  ],
+  allService: [
+    {
+      icon: 'weather-icon',
+      title: 'Overcast Clouds',
+      name: 'weather',
+      id: 5
+    },
+
+    {
+      icon: 'sleep-icon',
+      title: 'sleep mode',
+      name: 'sleep-mode',
+      id: 7
+    },
+    {
+      icon: 'audio-icon',
+      title: 'audio',
+      name: 'audio',
+      id: 8
+    },
+    {
+      icon: 'user-icon',
+      title: 'user',
+      name: 'user',
+      id: 9
+    },
+
+    {
+      icon: 'info-icon',
+      title: 'information',
+      name: 'information',
+      id: 11
+    },
+
+    {
+      icon: 'system-icon',
+      title: 'system',
+      name: 'system',
+      id: 13
+    },
+    {
+      icon: 'language-icon',
+      title: 'language',
+      name: 'language',
+      id: 14
+    },
+  ],
+
+  addButtonWidget: {
+    icon: 'plus-icon',
+    title: '',
+    link: 'add-widget',
+    id: 4
+  }
 }
 
 export const widgetsReducer = (state = INITIAL_STATE,action) => {
   const { type,payload } = action;
   switch (type) {
-    case WIDGETS_ACTION_TYPES.SET_WIDGETS_FOOTER:
-      return {
-        ...state,
-        widgetsFooter: payload
-      }
-    case WIDGETS_ACTION_TYPES.SET_WIDGETS_MAIN:
-      return {
-        ...state,
-        widgetsMain: payload
-      }
-    case WIDGETS_ACTION_TYPES.SET_ALL_SERVICE:
-      return {
-        ...state,
-        allService: payload
-      }
-    case WIDGETS_ACTION_TYPES.SET_ALL_SETTINGS:
-      return {
-        ...state,
-        allSettings: payload
-      }
+
     case WIDGETS_ACTION_TYPES.SET_RENDER_WIDGETS:
       return {
         ...state,
         renderWidgets: [...state.renderWidgets,payload]
-        // renderWidgets: [...state.renderWidgets].splice(2,0,payload)
       }
     default:
       return state;
   }
 }
-
-// radial-gradient(ellipse at top, rgba(255, 255, 255, 0.4) 20%, transparent 90%)
-
-// background: linear-gradient(180deg, #333333, #202020);
