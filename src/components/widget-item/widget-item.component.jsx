@@ -4,6 +4,8 @@ import { useDispatch,useSelector } from 'react-redux';
 import { getRenderWidgets } from '../../store/widgets/widgets.selector';
 import { setRenderWidgets } from '../../store/widgets/widgets.actions';
 import { ReactComponent as ChevronRightIcon } from '../../assets/widgets-icon/chevron-right-icon.svg';
+import { ReactComponent as PlusSmallIcon } from '../../assets/widgets-icon/plus-small-icon.svg';
+
 import { WidgetItemContainer } from "./widget-item.styles";
 
 
@@ -29,7 +31,7 @@ const WidgetItem = ({ item }) => {
       <div className="wrapper-bg"></div>
       <div className="widget-icon">
         {
-          link ? <ChevronRightIcon /> : <div>+</div>
+          link ? <ChevronRightIcon /> : <div ><PlusSmallIcon /></div>
         }
       </div>
     </WidgetItemContainer>

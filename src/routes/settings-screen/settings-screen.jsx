@@ -5,15 +5,17 @@ import { getAllSettingsItems } from '../../store/widgets/widgets.selector';
 
 import WidgetItem from "../../components/widget-item/widget-item.component";
 
+import { SettingsScreenContainer } from "./settings-screen.styles";
+
 const SettingsScreen = () => {
   const allSettingsItems = useSelector(getAllSettingsItems);
 
   return (
-    <div>
+    <SettingsScreenContainer>
       {
         allSettingsItems.map((el,ind) => (<WidgetItem item={el} key={ind} />))
-    }
-    </div>
+      }
+    </SettingsScreenContainer>
   )
 };
 
