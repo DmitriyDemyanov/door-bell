@@ -4,7 +4,6 @@ export const getAllSettingsItems = (state) => state.widgets.allSettings;
 export const getAllServicesItems = (state) => state.widgets.allService;
 
 export const getRenderWidgets = (state) => {
-  localStorage.setItem('main-widgets',JSON.stringify(state.widgets.renderWidgets));
   return state.widgets.widgetsMain.concat(state.widgets.renderWidgets,state.widgets.addButtonWidget)
 }
 

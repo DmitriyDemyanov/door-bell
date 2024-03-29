@@ -125,9 +125,11 @@ export const widgetsReducer = (state = INITIAL_STATE,action) => {
   switch (type) {
 
     case WIDGETS_ACTION_TYPES.SET_RENDER_WIDGETS:
+      const newRenderWidgets = [...state.renderWidgets,payload];
+      localStorage.setItem('main-widgets',JSON.stringify(newRenderWidgets));
       return {
         ...state,
-        renderWidgets: [...state.renderWidgets,payload]
+        renderWidgets: newRenderWidgets
       }
     default:
       return state;
