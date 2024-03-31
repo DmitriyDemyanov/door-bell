@@ -10,4 +10,6 @@ export const setRenderWidgets = (item) => {
     type: WIDGETS_ACTION_TYPES.SET_RENDER_WIDGETS,
     payload: item
   }
-}
+}; 
+
+export const setModalCommonInfo = (item) => ({ type: WIDGETS_ACTION_TYPES.SET_MODAL_COMMON_INFO,payload:item })

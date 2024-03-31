@@ -7,6 +7,8 @@ export const getRenderWidgets = (state) => {
   return state.widgets.widgetsMain.concat(state.widgets.renderWidgets,state.widgets.addButtonWidget)
 }
 
-// [...state.widgets.widgetsMain,...state.widgets.renderWidgets,state.widgets.addButtonWidget]
+export const getModalCommonInfo = (state) => state.widgets.modalCommonInfo;
+
+
 
 

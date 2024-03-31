@@ -117,7 +117,8 @@ const INITIAL_STATE = {
     title: '',
     link: 'add-widget',
     id: 4
-  }
+  },
+  modalCommonInfo: null, //{}
 }
 
 export const widgetsReducer = (state = INITIAL_STATE,action) => {
@@ -130,6 +131,11 @@ export const widgetsReducer = (state = INITIAL_STATE,action) => {
       return {
         ...state,
         renderWidgets: newRenderWidgets
+      }
+    case WIDGETS_ACTION_TYPES.SET_MODAL_COMMON_INFO: 
+      return {
+        ...state,
+        modalCommonInfo: payload,
       }
     default:
       return state;

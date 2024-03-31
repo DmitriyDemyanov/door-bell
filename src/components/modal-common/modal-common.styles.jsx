@@ -13,18 +13,39 @@ export const ModalCommonContainer = styled.div`
   z-index: 1;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   .wrapper-icon {
-    margin-right: 40px;
-    width: 72px;
     height: 72px;
     display: flex;
+    img {
+      width: 72px;
+      height: 100%;
+      object-fit: cover;
+    }
+    &::after {
+      content: '';
+      margin-left:40px;
+      width: 1px;
+      height: 100%;
+      background: rgba(151, 151, 151, 0.2);
+    }
   }
   .wrapper-title { 
   padding-left: 40px;
   font-size: 24px;
   font-weight: 700;
   line-height: 28px;
-  border-left: 1px solid rgba(151, 151, 151, 0.2);
+
   }
+ 
 `
+export const WrapperRenderModal = styled.div`
+ position: absolute;
+width: 100%;
+height: 100%;
+top: 0;
+right: 0;
+left: 0;
+background: transparent;
+z-index: 100;
+`
+

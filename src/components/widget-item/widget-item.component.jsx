@@ -3,9 +3,11 @@ import { useDispatch,useSelector } from 'react-redux';
 
 import { getRenderWidgets } from '../../store/widgets/widgets.selector';
 import { setRenderWidgets } from '../../store/widgets/widgets.actions';
+
+import { setModalCommonInfo } from '../../store/widgets/widgets.actions';
+
 import { ReactComponent as ChevronRightIcon } from '../../assets/widgets-icon/chevron-right-icon.svg';
 import { ReactComponent as PlusSmallIcon } from '../../assets/widgets-icon/plus-small-icon.svg';
-
 import { WidgetItemContainer } from "./widget-item.styles";
 
 
@@ -21,7 +23,7 @@ const WidgetItem = ({ item }) => {
     }
     if (!currentWidgetsRender.find((el) => el.id === item.id)) {
       dispatch(setRenderWidgets(item));
-
+      dispatch(setModalCommonInfo(item));
     }
   }
 

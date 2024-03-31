@@ -2,7 +2,6 @@ import { MainItemContainer } from "./main-item.styles";
 
 const MainItem = ({ item }) => {
   const { icon,title,link } = item;
-
   return (
     <MainItemContainer
       to={link}
