@@ -1,5 +1,5 @@
 import styled from "styled-components"
 
-export const ServiceScreenContainer = styled.div`
+export const SettingsScreenContainer = styled.div`
   padding: 8px 32px 0;
 `
