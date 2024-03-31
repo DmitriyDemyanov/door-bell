@@ -18,7 +18,7 @@ const ModalCommon = () => {
 
     if (modalItem !== null) {
       setStatusModalCommon(true);
-      
+
       setTimeout(() => {
 
         setTimeout(() => {
@@ -43,7 +43,7 @@ const ModalCommon = () => {
           modalItem ? <img src={`./widgets-icon/audio-icon.svg`} alt='??' /> : <ModalDefaultIcon />
         }
         </div>
-        <div className="wrapper-title"> System widget added to  {modalItem?.title} </div>
+        <div className="wrapper-title"> System widget added to {modalItem?.title} </div>
       </ModalCommonContainer>
     </WrapperRenderModal>
 
