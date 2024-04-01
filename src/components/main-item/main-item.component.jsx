@@ -1,15 +1,16 @@
 import SvgIcon from "../icon-svg/svg-icon.component";
 
-import {MainItemContainer} from "./main-item.styles";
+import { MainItemContainer } from "./main-item.styles";
 
-const MainItem = ({item}) => {
-    const {icon, title, link} = item;
+const MainItem = ({ item }) => {
+    const { icon,title,link } = item;
+    console.log('LINK>>>>',link)
     return (
         <MainItemContainer
             to={link}
             className={`${title === "Leave" ? "accent-bg" : ""} `}>
             <div className={`wrapper-icon ${icon === "plus-icon" ? "center" : ""} `}>
-                <SvgIcon name={icon}/>
+                <SvgIcon name={icon} />
             </div>
             <div>{title}</div>
         </MainItemContainer>

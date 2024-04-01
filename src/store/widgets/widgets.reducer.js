@@ -96,6 +96,7 @@ const INITIAL_STATE = {
       icon: 'cleaning-icon',
       title: 'cleaning mode',
       name: 'cleaning-mode',
+      link: '/cleaning-mode',
       id: 10
     },
     {
@@ -132,7 +133,7 @@ export const widgetsReducer = (state = INITIAL_STATE,action) => {
         ...state,
         renderWidgets: newRenderWidgets
       }
-    case WIDGETS_ACTION_TYPES.SET_MODAL_COMMON_INFO: 
+    case WIDGETS_ACTION_TYPES.SET_MODAL_COMMON_INFO:
       return {
         ...state,
         modalCommonInfo: payload,

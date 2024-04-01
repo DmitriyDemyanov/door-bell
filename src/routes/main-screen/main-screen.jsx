@@ -11,17 +11,15 @@ import { MainScreenContainer } from "./main-screen.styles";
 
 
 const MainScreen = () => {
- 
+
   const widgetsRender = useSelector(getRenderWidgets);
 
   const [currentPage,setCurrentPage] = useState(1);
   const totalItemsOnPage = 9;
   const AllPages = Math.ceil(widgetsRender.length / totalItemsOnPage);
   const pagination = widgetsRender.slice((currentPage - 1) * totalItemsOnPage,((currentPage - 1) * totalItemsOnPage) + totalItemsOnPage);
-
   return (
     <MainScreenContainer>
-
       <div className="wrapper-default-settings" >
         {
           pagination.map((setting,ind) => (<MainItem item={setting} key={ind} />))

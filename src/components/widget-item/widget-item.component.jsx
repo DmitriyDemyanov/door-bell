@@ -10,15 +10,14 @@ import { ReactComponent as ChevronRightIcon } from '../../assets/widgets-icon/ch
 import { ReactComponent as PlusSmallIcon } from '../../assets/widgets-icon/plus-small-icon.svg';
 import { WidgetItemContainer } from "./widget-item.styles";
 
-
+const linkCorrection = ['service','settings']
 const WidgetItem = ({ item }) => {
   const { title,link } = item;
   const nav = useNavigate();
   const currentWidgetsRender = useSelector(getRenderWidgets);
   const dispatch = useDispatch();
-
   const addToRenderWidgets = (item) => {
-    if (link) {
+    if (linkCorrection.includes(item.link)) {
       return nav(link);
     }
     if (!currentWidgetsRender.find((el) => el.id === item.id)) {
@@ -33,7 +32,7 @@ const WidgetItem = ({ item }) => {
       <div className="wrapper-bg"></div>
       <div className="widget-icon">
         {
-          link ? <ChevronRightIcon /> : <div ><PlusSmallIcon /></div>
+          linkCorrection.includes(item.link) ? <ChevronRightIcon /> : <div ><PlusSmallIcon /></div>
         }
       </div>
     </WidgetItemContainer>
