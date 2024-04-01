@@ -1,29 +1,15 @@
-import React,{ useState,useEffect,useRef } from "react";
+import {useDynamicSvgImport} from "../../hooks/useDynamicSvgImport";
 
-export const IconSvg = ({ name,fill = '#fff' }) => {
-  const ImportedIconRef = useRef(null);
-  const [loading,setLoading] = useState(true);
-
-  useEffect(() => {
-    setLoading(true);
-    const importIcon = async () => {
-      try {
-        const { default: namedImport } = await import(`../../assets/widgets-icon/cameras-icon.svg`);
-        ImportedIconRef.current = namedImport;
-        console.log(">>>",namedImport);
-      } catch (e) {
-        throw e;
-      } finally {
-        setLoading(false);
-      }
-    }
-    importIcon();
-  },[name]);
-
-  if (!loading && ImportedIconRef.current) {
-    const { current: ImportedIcon } = ImportedIconRef;
-    return <ImportedIcon fill={fill} />;
+export const IconSvg = ({ name, onCompleted, onError, ...rest }) => {
+  const {error, loading, SvgIcon} = useDynamicSvgImport(name, {onCompleted, onError});
+  if (error) {
+    return error.message;
   }
-
-  return <div></div>;
+  if (loading) {
+    return "Loading...";
+  }
+  if (SvgIcon) {
+    return <SvgIcon {...rest} />
+  }
+  return null;
 }
