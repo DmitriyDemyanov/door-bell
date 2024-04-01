@@ -1,22 +1,19 @@
-import { MainItemContainer } from "./main-item.styles";
+import SvgIcon from "../icon-svg/svg-icon.component";
 
-import { ReactSVG }          from 'react-svg';
-import {createImageUrl}      from "../../utils/createImageUrl.util";
+import {MainItemContainer} from "./main-item.styles";
 
-const MainItem = ({ item }) => {
-  const { icon,title,link } = item;
-  return (
-    <MainItemContainer
-      to={link}
-      className={`${title === 'Leave' ? 'accent-bg' : ''} `}>
-      <div className={`wrapper-icon ${icon === 'plus-icon' ? 'center' : ''} `}>
-        {/*<img src={`./widgets-icon/${icon}.svg`} alt='#' />*/}
-        {/*  <IconSvg2 name={icon} fill={"#dc0000"} stroke={"#00DC00"}/>*/}
-          <ReactSVG src={createImageUrl(icon)} />
-      </div>
-      <div>{title}</div>
-    </MainItemContainer>
-  )
+const MainItem = ({item}) => {
+    const {icon, title, link} = item;
+    return (
+        <MainItemContainer
+            to={link}
+            className={`${title === "Leave" ? "accent-bg" : ""} `}>
+            <div className={`wrapper-icon ${icon === "plus-icon" ? "center" : ""} `}>
+                <SvgIcon name={icon}/>
+            </div>
+            <div>{title}</div>
+        </MainItemContainer>
+    );
 };
 
 export default MainItem;
