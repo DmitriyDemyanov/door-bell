@@ -20,10 +20,19 @@ body {
     background: linear-gradient(180deg, #DC0000 -170.67%, #6F0404 100%);
   }
 }
+
 a {
   color: var(--color-main-font);
   text-decoration: none;
   &:focus-visible {
     outline: none;
   }
+}
+
+.stroke-color-text {
+  stroke: var(--color-main-font);
+}
+
+.fill-color-text {
+  fill: var(--color-main-font);
 }
