@@ -16,13 +16,20 @@ export const ModalCommonContainer = styled.div`
 
   .wrapper-icon {
     margin-right:40px;
-    display: flex;
-    align-items:center;
-    height: 100%;
-    img {
-      width: 72px;
-      height: 72px;
+    border-radius: 50%;
+    width: 72px;
+    height: 72px;
+    
+    
+    
+    background: rgba(187, 187, 187, 1);
+    svg {
+      width: 36px;
+      height: 36px;
       object-fit: cover;
+      display:flex;
+      align-items:center;
+      justify-content: center;
     }
   }
   .wrapper-title { 
@@ -34,6 +41,10 @@ export const ModalCommonContainer = styled.div`
   border-left: 1px solid rgba(151,151,151,0.2);
   display: flex;
   align-items: center;
+  span {
+    display: contents;
+    text-transform: capitalize;
+  }
   }
 `
 export const WrapperRenderModal = styled.div`

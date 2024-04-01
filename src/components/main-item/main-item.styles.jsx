@@ -36,9 +36,6 @@ export const MainItemContainer = styled(Link)`
   .center{
     height: 100%;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
   
   .icon-cameras {

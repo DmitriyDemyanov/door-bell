@@ -20,18 +20,13 @@ const ModalCommon = () => {
 
     if (modalItem !== null) {
       setStatusModalCommon(true);
-
       setTimeout(() => {
-
         setTimeout(() => {
           dispatch(setModalCommonInfo(null));
         },200);
-
         setStatusModalCommon(false);
-
       },3000)
     }
-
   },[modalItem])
 
   return (
@@ -40,12 +35,13 @@ const ModalCommon = () => {
       onClick={() => setStatusModalCommon(false)}
     >
       <ModalCommonContainer
-      >
-        <div className="wrapper-icon">  {
-          modalItem ? <SvgIcon name={modalItem.icon} /> : <ModalDefaultIcon />
-        }
+      > <div>
+          <div className="wrapper-icon">  {
+            modalItem ? <SvgIcon name={modalItem.icon} /> : <ModalDefaultIcon />
+          }
+          </div>
         </div>
-        <div className="wrapper-title"> System widget added to {modalItem?.title} </div>
+        <div className="wrapper-title"> <span> {modalItem?.title} </span> widget added to home Screen </div>
       </ModalCommonContainer>
     </WrapperRenderModal>
 
