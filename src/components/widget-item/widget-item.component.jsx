@@ -7,6 +7,7 @@ import { setRenderWidgets } from '../../store/widgets/widgets.actions';
 import { setModalCommonInfo } from '../../store/widgets/widgets.actions';
 
 import { ReactComponent as ChevronRightIcon } from '../../assets/widgets-icon/chevron-right-icon.svg';
+import { ReactComponent as CheckIcon } from '../../assets/widgets-icon/check-icon.svg';
 import { ReactComponent as PlusSmallIcon } from '../../assets/widgets-icon/plus-small-icon.svg';
 import { WidgetItemContainer } from "./widget-item.styles";
 
@@ -25,7 +26,7 @@ const WidgetItem = ({ item }) => {
       dispatch(setRenderWidgets(item));
       dispatch(setModalCommonInfo(item));
     }
-  }
+  };
 
   return (
     <WidgetItemContainer onClick={() => addToRenderWidgets(item)} >
@@ -33,7 +34,8 @@ const WidgetItem = ({ item }) => {
       <div className="wrapper-bg"></div>
       <div className="widget-icon">
         {
-          link ? <ChevronRightIcon /> : <div ><PlusSmallIcon /></div>
+          link ? <ChevronRightIcon /> : (currentWidgetsRender.find((el) => el.title === title) ?
+            <div ><CheckIcon /></div> : <div ><PlusSmallIcon /></div>)
         }
       </div>
     </WidgetItemContainer>
