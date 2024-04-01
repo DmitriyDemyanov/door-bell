@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import { useState } from 'react';
 
 
-import { getRenderWidgets } from '../../store/widgets/widgets.selector';
+import { getWidgetsList } from '../../store/widgets/widgets.selector';
 
 import Footer from "../../components/footer/footer.component";
 import MainItem from "../../components/main-item/main-item.component";
@@ -12,7 +12,7 @@ import { MainScreenContainer } from "./main-screen.styles";
 
 const MainScreen = () => {
 
-  const widgetsRender = useSelector(getRenderWidgets);
+  const widgetsRender = useSelector(getWidgetsList);
 
   const [currentPage,setCurrentPage] = useState(1);
   const totalItemsOnPage = 9;

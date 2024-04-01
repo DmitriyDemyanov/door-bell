@@ -1,9 +1,46 @@
 import { WIDGETS_ACTION_TYPES } from "./widgets.types";
 
-const localStorMainWidgets = JSON.parse(localStorage.getItem('main-widgets'));
+const DEFAULT_WIDGETS = [
+  {
+    icon: 'cameras-icon',
+    title: 'cameras',
+    link: '/add-widget',
+    id: 'w-cameras',
+    status: 'default'
+
+  },
+  {
+    icon: 'services-icon',
+    title: 'services',
+    link: '/',
+    id: 'w-services',
+    status: 'default'
+  },
+  {
+    icon: 'message-icon',
+    title: 'message',
+    link: '/',
+    id: 'w-message',
+    status: 'default'
+  },
+];
+const ADD_BUTTON = {
+  icon: 'plus-icon',
+  title: '',
+  link: 'add-widget',
+  id: 'add-button'
+};
+
+const loadWidgets = () => JSON.parse(localStorage.getItem("added-widgets")) || [];
+
+const saveWidgets = widgets => localStorage.setItem('added-widgets', JSON.stringify(widgets));
 
 const INITIAL_STATE = {
-  widgetsFooter: [
+  addedWidgets: loadWidgets(),
+
+  widgetsList: [...DEFAULT_WIDGETS, ...loadWidgets(), ADD_BUTTON],
+
+  footerWidgets: [
     {
       icon: 'in-call-icon',
       title: 'View Calls'
@@ -19,31 +56,6 @@ const INITIAL_STATE = {
     },
 
   ],
-  widgetsMain: [
-    {
-      icon: 'cameras-icon',
-      title: 'cameras',
-      link: '/add-widget',
-      id: 'w-cameras',
-      status: 'default'
-
-    },
-    {
-      icon: 'services-icon',
-      title: 'services',
-      link: '/',
-      id: 'w-services',
-      status: 'default'
-    },
-    {
-      icon: 'message-icon',
-      title: 'message',
-      link: '/',
-      id: 'w-message',
-      status: 'default'
-    },
-  ],
-  renderWidgets: localStorMainWidgets || [],
   allSettings: [
     {
       icon: 'weather-icon',
@@ -91,6 +103,7 @@ const INITIAL_STATE = {
       id: 14
     },
   ],
+
   allService: [
     {
       icon: 'cleaning-icon',
@@ -112,13 +125,6 @@ const INITIAL_STATE = {
       id: 6
     },
   ],
-
-  addButtonWidget: {
-    icon: 'plus-icon',
-    title: '',
-    link: 'add-widget',
-    id: 4
-  },
   modalCommonInfo: null, //{}
 }
 
@@ -126,12 +132,14 @@ export const widgetsReducer = (state = INITIAL_STATE,action) => {
   const { type,payload } = action;
   switch (type) {
 
-    case WIDGETS_ACTION_TYPES.SET_RENDER_WIDGETS:
-      const newRenderWidgets = [...state.renderWidgets,payload];
-      localStorage.setItem('main-widgets',JSON.stringify(newRenderWidgets));
+  case WIDGETS_ACTION_TYPES.SET_ADDED_WIDGETS:
+      const addedWidgets = [...state.addedWidgets, payload];
+      const widgetsList = [...DEFAULT_WIDGETS, ...addedWidgets, ADD_BUTTON];
+      saveWidgets(addedWidgets);
       return {
         ...state,
-        renderWidgets: newRenderWidgets
+        addedWidgets,
+        widgetsList
       }
     case WIDGETS_ACTION_TYPES.SET_MODAL_COMMON_INFO:
       return {
