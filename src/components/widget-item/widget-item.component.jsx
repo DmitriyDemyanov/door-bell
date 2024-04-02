@@ -4,7 +4,7 @@ import { useDispatch,useSelector } from "react-redux";
 import { getWidgetsList } from "../../store/widgets/widgets.selector";
 import { setAddedWidgets } from "../../store/widgets/widgets.actions";
 
-import { setModalCommonInfo } from "../../store/modal/modal.action";
+import {setModalTitle} from "../../store/modal/modal.action";
 
 import { ReactComponent as ChevronRightIcon } from "../../assets/widgets-icon/chevron-right-icon.svg";
 import { ReactComponent as CheckIcon } from "../../assets/widgets-icon/check-icon.svg";
@@ -24,7 +24,7 @@ const WidgetItem = ({ item }) => {
         }
         if (!widgetsList.find((el) => el.id === item.id)) {
             dispatch(setAddedWidgets(item));
-            dispatch(setModalCommonInfo(item));
+            dispatch(setModalTitle(title));
         }
     };
 
