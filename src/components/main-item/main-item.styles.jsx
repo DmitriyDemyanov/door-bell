@@ -15,7 +15,7 @@ export const MainItemContainer = styled(Link)`
   &::before {
     content: '';
     position:absolute;
-    width: 168px;
+    width: 162px;
     height: 2px;
     left: 0;
     right: 0;
@@ -28,9 +28,19 @@ export const MainItemContainer = styled(Link)`
   
   .wrapper-icon {
     padding: 36px 0 28px 0;
+    position: relative;
     img{
       width: 48px;
       height: 48px;
+    }
+    .info-marker {
+      position: absolute;
+      top: 28px;
+      right: 50px;
+      width: 16px;
+      height: 16px;
+      background:rgba(220, 0, 0, 1);
+      border-radius: 50%;
     }
   }
   .center{

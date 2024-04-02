@@ -15,8 +15,11 @@ const INITIAL_STATE = {
 
 export const messagesReducer = (state = INITIAL_STATE,action) => {
   const { type,payload } = action;
+
   switch (type) {
+
     case MESSAGES_ACTION_TYPES.SET_ACTIVE_MESSAGE:
+
       return {
         ...state,
         activeMessage: payload,
