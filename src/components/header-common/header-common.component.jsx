@@ -8,6 +8,7 @@ const settingTitle = {
   '/add-widget': 'Add to Main Screen',
   '/add-widget/service': 'Add Service',
   '/add-widget/settings': 'Add Settings',
+  '/cleaning-mode': 'Please clean the Screen now',
 }
 
 const HeaderCommon = () => {
@@ -16,7 +17,7 @@ const HeaderCommon = () => {
   console.log('pathname',pathname);
   return (
     <HeaderCommonContainer>
-      <div onClick={() => nav(-1)} > <ArrowLeftIcon /> </div>
+      <div className={pathname === '/cleaning-mode' ? 'hide' : ''} onClick={() => nav(-1)} > <ArrowLeftIcon /> </div>
       <div className="header-title">{settingTitle[pathname]} </div>
     </HeaderCommonContainer>
   )

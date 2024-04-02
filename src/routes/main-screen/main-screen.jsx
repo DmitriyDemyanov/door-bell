@@ -18,10 +18,8 @@ const MainScreen = () => {
   const totalItemsOnPage = 9;
   const AllPages = Math.ceil(widgetsRender.length / totalItemsOnPage);
   const pagination = widgetsRender.slice((currentPage - 1) * totalItemsOnPage,((currentPage - 1) * totalItemsOnPage) + totalItemsOnPage);
-
   return (
     <MainScreenContainer>
-
       <div className="wrapper-default-settings" >
         {
           pagination.map((setting,ind) => (<MainItem item={setting} key={ind} />))

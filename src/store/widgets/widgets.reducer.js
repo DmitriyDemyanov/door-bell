@@ -109,6 +109,7 @@ const INITIAL_STATE = {
       icon: 'cleaning-icon',
       title: 'cleaning mode',
       name: 'cleaning-mode',
+      link: '/cleaning-mode',
       id: 10
     },
     {
