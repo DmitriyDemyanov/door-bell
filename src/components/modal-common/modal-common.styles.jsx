@@ -37,6 +37,10 @@ export const ModalCommonContainer = styled.div`
     border-left: 1px solid rgba(151,151,151,0.2);
     display: flex;
     align-items: center;
+      span {
+          display: contents;
+          text-transform: capitalize;
+      }
   }
 `
 export const WrapperRenderModal = styled.div`

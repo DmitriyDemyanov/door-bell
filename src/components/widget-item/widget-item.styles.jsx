@@ -10,11 +10,12 @@ export const WidgetItemContainer = styled.div`
   justify-content: space-between;
   font-size: 32px;
   font-weight: 300;
+  text-transform: capitalize;
   position: relative;
   border-radius: 3px;
   background: linear-gradient(180deg, #333333, #202020);
 
-   .wrapper-bg{
+  .wrapper-bg{
     position: absolute;
     width: calc(100% + 2px);
     height: 96px;

@@ -6,9 +6,7 @@ import { setAddedWidgets } from "../../store/widgets/widgets.actions";
 
 import {setModalTitle} from "../../store/modal/modal.action";
 
-import { ReactComponent as ChevronRightIcon } from "../../assets/widgets-icon/chevron-right-icon.svg";
-import { ReactComponent as CheckIcon } from "../../assets/widgets-icon/check-icon.svg";
-import { ReactComponent as PlusSmallIcon } from "../../assets/widgets-icon/plus-small-icon.svg";
+import SvgIcon from "../icon-svg/svg-icon.component";
 import { WidgetItemContainer } from "./widget-item.styles";
 
 const linkCorrection = ['service','settings']
@@ -29,13 +27,13 @@ const WidgetItem = ({ item }) => {
     };
 
     const renderedIcon = () => {
-        if (link) {
-            return <ChevronRightIcon />;
+        if (linkCorrection.includes(link)) {
+            return <div> <SvgIcon name='chevron-right-icon' /> </div>;
         }
         if (widgetsList.find((el) => el.title === title)) {
-            return <div><CheckIcon /></div>;
+            return <div><SvgIcon name='check-icon' /></div>;
         }
-        return <div><PlusSmallIcon /></div>;
+        return <div><SvgIcon name='plus-small-icon' /></div>;
     };
 
     return (

@@ -32,7 +32,7 @@ const ModalCommon = () => {
       <ModalCommonContainer
       >
         <SvgIcon className="wrapper-icon" name={"modal-default-icon"}/>
-        <div className="wrapper-title"> System widget added to {title} </div>
+        <div className="wrapper-title"> <span>{title}</span> widget added to home Screen </div>
       </ModalCommonContainer>
     </WrapperRenderModal>
 
