@@ -1,18 +1,18 @@
 import { useEffect,useState } from "react";
-
-import { CleaningModeComponent } from "./cleaning-mode.styles";
 import { useNavigate } from "react-router";
 
+import { CleaningModeComponent } from "./cleaning-mode.styles";
 
 const CleaningMode = () => {
   const [counter,setCounter] = useState(30);
   const nav = useNavigate();
   useEffect(() => {
-    setTimeout(() => {
-      setCounter(counter - 1)
-    },1000)
-    if (counter === 0) {
+    if (counter <= 0) {
       nav('/');
+    } else {
+      setTimeout(() => {
+        setCounter(counter - 1)
+      },1000)
     }
   },[counter]);
 

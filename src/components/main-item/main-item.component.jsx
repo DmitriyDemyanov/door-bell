@@ -4,7 +4,6 @@ import { MainItemContainer } from "./main-item.styles";
 
 const MainItem = ({ item }) => {
     const { icon,title,link } = item;
-    console.log('LINK>>>>',link)
     return (
         <MainItemContainer
             to={link}
