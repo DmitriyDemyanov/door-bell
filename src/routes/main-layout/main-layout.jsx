@@ -9,10 +9,8 @@ const MainLayout = () => {
   const { pathname } = useLocation();
 
   return (
-    <Fragment>
-      
+    <Fragment> 
       { pathname === '/' ? <HeaderMain /> : <HeaderCommon /> }
-
       <Outlet />
     </Fragment>
   );

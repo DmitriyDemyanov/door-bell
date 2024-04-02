@@ -8,7 +8,7 @@ import MainScreen from "./routes/main-screen/main-screen.jsx";
 import AddWidget from "./routes/add-widget/add-widget.jsx";
 import ServiceScreen from "./routes/service-screen/service-screen.jsx";
 import SettingsScreen from "./routes/settings-screen/settings-screen.jsx";
-
+import CleaningMode from "./routes/cleaning-mode/cleaning-mode.component.jsx";
 
 
 function App() {
@@ -21,6 +21,7 @@ function App() {
           <Route path='add-widget' element={<AddWidget />} />
           <Route path="add-widget/service" element={<ServiceScreen />} />
           <Route path="add-widget/settings" element={<SettingsScreen />} />
+          <Route path="/cleaning-mode" element={<CleaningMode/>} />
         </Route>
       </Routes>
     </Fragment>

@@ -11,21 +11,22 @@ import {ReactComponent as CheckIcon}        from "../../assets/widgets-icon/chec
 import {ReactComponent as PlusSmallIcon}    from "../../assets/widgets-icon/plus-small-icon.svg";
 import {WidgetItemContainer}                from "./widget-item.styles";
 
+const linkCorrection = ['service','settings']
 const WidgetItem = ({item}) => {
     const {title, link} = item;
     const nav           = useNavigate();
     const widgetsList   = useSelector(getWidgetsList);
     const dispatch      = useDispatch();
 
-    const addWidget = (item) => {
-        if (link) {
-            return nav(link);
-        }
-        if (!widgetsList.find((el) => el.id === item.id)) {
-            dispatch(setAddedWidgets(item));
-            dispatch(setModalCommonInfo(item));
-        }
-    };
+  const addWidget = (item) => {
+    if (linkCorrection.includes(item.link)) {
+      return nav(link);
+    }
+      if (!widgetsList.find((el) => el.id === item.id)) {
+          dispatch(setAddedWidgets(item));
+          dispatch(setModalCommonInfo(item));
+      }
+  };
 
     const renderedIcon = () => {
         if (link) {

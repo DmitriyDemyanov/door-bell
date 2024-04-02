@@ -9,9 +9,11 @@ export const HeaderCommonContainer = styled.div`
   font-weight: 700;
   line-height: 36px;
   .header-title{
+    width: 80%;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    text-align: center;
   }
 
 `
