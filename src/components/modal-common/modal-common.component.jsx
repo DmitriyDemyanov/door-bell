@@ -1,12 +1,12 @@
 import { useEffect,useState } from 'react';
 import { useDispatch,useSelector } from 'react-redux';
 
+import { getWidgetsList } from '../../store/widgets/widgets.selector';
 import { getModalCommonInfo } from '../../store/widgets/widgets.selector';
 import { setModalCommonInfo } from '../../store/widgets/widgets.actions';
 
 import SvgIcon from "../icon-svg/svg-icon.component";
 
-import { ReactComponent as ModalDefaultIcon } from '../../assets/default-icon/modal-default-icon.svg'
 import { ModalCommonContainer,WrapperRenderModal } from "./modal-common.styles";
 
 
@@ -15,7 +15,8 @@ const ModalCommon = () => {
   const [statusModalCommon,setStatusModalCommon] = useState(false);
 
   const modalItem = useSelector(getModalCommonInfo);
-
+  const renderWidgets = useSelector(getWidgetsList);
+  console.log('renderWidgets',renderWidgets);
   useEffect(() => {
 
     if (modalItem !== null) {
@@ -43,11 +44,11 @@ const ModalCommon = () => {
       >
         <div>
           <div className="wrapper-icon">  {
-            modalItem ? <SvgIcon name={modalItem.icon} /> : <ModalDefaultIcon />
+            modalItem && renderWidgets.length < 14 ? <SvgIcon name={modalItem.icon} /> : <SvgIcon name='modal-default-icon' />
           }
           </div>
         </div>
-        <div className="wrapper-title"> <span> {modalItem?.title} </span>  widget added to home Screen  </div>
+        <div className="wrapper-title"> <span> {modalItem?.title}  </span>  widget added to home Screen  </div>
       </ModalCommonContainer>
     </WrapperRenderModal>
 
