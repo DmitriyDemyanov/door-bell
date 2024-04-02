@@ -1,2 +1,2 @@
-
-export const getModalCommonInfo = (state) => state.modal.modalCommonInfo;
+export const modalTitle = state => state.modal.title;
+export const modalIsShow = state => state.modal.isShow;

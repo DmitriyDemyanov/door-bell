@@ -17,33 +17,36 @@ export const ModalCommonContainer = styled.div`
   .wrapper-icon {
     margin-right:40px;
     display: flex;
+    justify-content: center;
     align-items:center;
-    height: 100%;
-    img {
-      width: 72px;
-      height: 72px;
-      object-fit: cover;
+    min-width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: #BBB;
+    div {
+      padding-top: 4px;
     }
   }
+    
   .wrapper-title { 
-  min-height: 88px;
-  padding-left: 40px;
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 28px;
-  border-left: 1px solid rgba(151,151,151,0.2);
-  display: flex;
-  align-items: center;
+    min-height: 88px;
+    padding-left: 40px;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28px;
+    border-left: 1px solid rgba(151,151,151,0.2);
+    display: flex;
+    align-items: center;
   }
 `
 export const WrapperRenderModal = styled.div`
-position: absolute;
-width: 100%;
-height: 100%;
-top: 0;
-right: 0;
-left: 0;
-background: transparent;
-z-index: 100;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+  background: transparent;
+  z-index: 100;
 `
 
