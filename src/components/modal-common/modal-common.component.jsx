@@ -1,8 +1,8 @@
 import { useEffect,useState } from 'react';
 import { useDispatch,useSelector } from 'react-redux';
 
-import { getModalCommonInfo } from '../../store/widgets/widgets.selector';
-import { setModalCommonInfo } from '../../store/widgets/widgets.actions';
+import { getModalCommonInfo } from '../../store/modal/modal.selector';
+import { setModalCommonInfo } from '../../store/modal/modal.action';
 
 import SvgIcon from "../icon-svg/svg-icon.component";
 
@@ -15,7 +15,7 @@ const ModalCommon = () => {
   const [statusModalCommon,setStatusModalCommon] = useState(false);
 
   const modalItem = useSelector(getModalCommonInfo);
-
+  console.log('modalItem',modalItem)
   useEffect(() => {
 
     if (modalItem !== null) {
