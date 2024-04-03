@@ -14,6 +14,16 @@ export const HeaderCommonContainer = styled.div`
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
+    .header-date {
+      font-size: 20px;
+      font-weight: 300;
+      line-height: 24px;
+      .vertical-slash{
+       margin: 0 10px;
+      }
+    }
   }
-
+  .item-add {
+    margin-left: auto;
+  }
 `

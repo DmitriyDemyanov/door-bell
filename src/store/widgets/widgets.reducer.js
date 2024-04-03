@@ -4,7 +4,7 @@ const DEFAULT_WIDGETS = [
   {
     icon: 'cameras-icon',
     title: 'cameras',
-    link: '/add-widget',
+    link: '/cameras',
     id: 'w-cameras',
     status: 'default'
 
