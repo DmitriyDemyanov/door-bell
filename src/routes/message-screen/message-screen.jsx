@@ -27,7 +27,6 @@ const MessageScreen = () => {
         onClick={() => dispatch(setActiveMessage(''))}
       >
         Remove my message from doorbell
-        <div className="back-bg"></div>
       </div>
 
     </MessageScreenContainer>
