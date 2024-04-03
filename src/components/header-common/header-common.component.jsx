@@ -9,6 +9,7 @@ const settingTitle = {
   '/add-widget/service': 'Add Service',
   '/add-widget/settings': 'Add Settings',
   '/cleaning-mode': 'Please clean the Screen now',
+  '/message': 'Message',
 }
 
 const HeaderCommon = () => {

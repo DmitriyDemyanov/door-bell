@@ -19,7 +19,7 @@ const DEFAULT_WIDGETS = [
   {
     icon: 'message-icon',
     title: 'message',
-    link: '/',
+    link: 'message',
     id: 'w-message',
     status: 'default'
   },
@@ -33,12 +33,12 @@ const ADD_BUTTON = {
 
 const loadWidgets = () => JSON.parse(localStorage.getItem("added-widgets")) || [];
 
-const saveWidgets = widgets => localStorage.setItem('added-widgets', JSON.stringify(widgets));
+const saveWidgets = widgets => localStorage.setItem('added-widgets',JSON.stringify(widgets));
 
 const INITIAL_STATE = {
   addedWidgets: loadWidgets(),
 
-  widgetsList: [...DEFAULT_WIDGETS, ...loadWidgets(), ADD_BUTTON],
+  widgetsList: [...DEFAULT_WIDGETS,...loadWidgets(),ADD_BUTTON],
 
   footerWidgets: [
     {
@@ -131,9 +131,9 @@ export const widgetsReducer = (state = INITIAL_STATE,action) => {
   const { type,payload } = action;
   switch (type) {
 
-  case WIDGETS_ACTION_TYPES.SET_ADDED_WIDGETS:
-      const addedWidgets = [...state.addedWidgets, payload];
-      const widgetsList = [...DEFAULT_WIDGETS, ...addedWidgets, ADD_BUTTON];
+    case WIDGETS_ACTION_TYPES.SET_ADDED_WIDGETS:
+      const addedWidgets = [...state.addedWidgets,payload];
+      const widgetsList = [...DEFAULT_WIDGETS,...addedWidgets,ADD_BUTTON];
       saveWidgets(addedWidgets);
       return {
         ...state,
