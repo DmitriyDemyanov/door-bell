@@ -1,0 +1,1 @@
+export const getAllCameras = (state) => state.cameras.allCameras;
