@@ -21,6 +21,11 @@ body {
   }
 }
 
+#root {
+  position: relative;
+  height: 100%;
+}
+
 a {
   color: var(--color-main-font);
   text-decoration: none;
