@@ -1,53 +1,38 @@
-import { useEffect,useState } from 'react';
+import { useEffect } from 'react';
 import { useDispatch,useSelector } from 'react-redux';
 
-import { getModalCommonInfo } from '../../store/widgets/widgets.selector';
-import { setModalCommonInfo } from '../../store/widgets/widgets.actions';
+import {modalTitle, modalIsShow} from '../../store/modal/modal.selector';
+import { setIsShow } from '../../store/modal/modal.action';
 
 import SvgIcon from "../icon-svg/svg-icon.component";
 
-import { ReactComponent as ModalDefaultIcon } from '../../assets/default-icon/modal-default-icon.svg'
 import { ModalCommonContainer,WrapperRenderModal } from "./modal-common.styles";
 
+let timer = null;
 
 const ModalCommon = () => {
   const dispatch = useDispatch();
-  const [statusModalCommon,setStatusModalCommon] = useState(false);
-
-  const modalItem = useSelector(getModalCommonInfo);
+  const title = useSelector(modalTitle);
+  const isShow = useSelector(modalIsShow);
 
   useEffect(() => {
-
-    if (modalItem !== null) {
-      setStatusModalCommon(true);
-
-      setTimeout(() => {
-
-        setTimeout(() => {
-          dispatch(setModalCommonInfo(null));
-        },200);
-
-        setStatusModalCommon(false);
-
-      },3000)
+    clearTimeout(timer);
+    if (isShow) {
+      timer = setTimeout(() => {
+        dispatch(setIsShow(false));
+      },3000);
     }
-
-  },[modalItem])
+  },[isShow]);
 
   return (
     <WrapperRenderModal
-      className={statusModalCommon ? '' : 'hide'}
-      onClick={() => setStatusModalCommon(false)}
+      className={isShow ? '' : 'hide'}
+      onClick={() => dispatch(setIsShow(false))}
     >
       <ModalCommonContainer
       >
-        <div>
-          <div className="wrapper-icon">  {
-            modalItem ? <SvgIcon name={modalItem.icon} /> : <ModalDefaultIcon />
-          }
-          </div>
-        </div>
-        <div className="wrapper-title"> <span> {modalItem?.title} </span>  widget added to home Screen  </div>
+        <SvgIcon className="wrapper-icon" name={"modal-default-icon"}/>
+        <div className="wrapper-title"> <span>{title}</span> widget added to home Screen </div>
       </ModalCommonContainer>
     </WrapperRenderModal>
 

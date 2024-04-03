@@ -125,7 +125,6 @@ const INITIAL_STATE = {
       id: 6
     },
   ],
-  modalCommonInfo: null, //{}
 }
 
 export const widgetsReducer = (state = INITIAL_STATE,action) => {
@@ -140,11 +139,6 @@ export const widgetsReducer = (state = INITIAL_STATE,action) => {
         ...state,
         addedWidgets,
         widgetsList
-      }
-    case WIDGETS_ACTION_TYPES.SET_MODAL_COMMON_INFO:
-      return {
-        ...state,
-        modalCommonInfo: payload,
       }
     default:
       return state;

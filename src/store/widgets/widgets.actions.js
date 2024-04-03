@@ -7,7 +7,4 @@ export const setAddedWidgets = (payload) => {
     };
 };
 
-export const setModalCommonInfo = (payload) => ({
-    payload,
-    type: WIDGETS_ACTION_TYPES.SET_MODAL_COMMON_INFO
-});
+

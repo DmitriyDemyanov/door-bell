@@ -4,7 +4,7 @@ import { useDispatch,useSelector } from "react-redux";
 import { getWidgetsList } from "../../store/widgets/widgets.selector";
 import { setAddedWidgets } from "../../store/widgets/widgets.actions";
 
-import { setModalCommonInfo } from "../../store/widgets/widgets.actions";
+import {setModalTitle} from "../../store/modal/modal.action";
 
 import SvgIcon from "../icon-svg/svg-icon.component";
 import { WidgetItemContainer } from "./widget-item.styles";
@@ -22,7 +22,7 @@ const WidgetItem = ({ item }) => {
         }
         if (!widgetsList.find((el) => el.id === item.id)) {
             dispatch(setAddedWidgets(item));
-            dispatch(setModalCommonInfo(item));
+            dispatch(setModalTitle(title));
         }
     };
 

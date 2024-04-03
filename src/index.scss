@@ -29,6 +29,14 @@ a {
   }
 }
 
+.stroke-color-opposite {
+  stroke: var(--color-main-font-opposite);
+}
+
+.fill-color-opposite {
+  fill: var(--color-main-font-opposite);
+}
+
 .stroke-color-text {
   stroke: var(--color-main-font);
 }

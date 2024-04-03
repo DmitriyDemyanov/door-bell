@@ -1,13 +1,8 @@
-import { ReactSVG } from 'react-svg';
-import { createImageUrl } from "../../utils/createImageUrl.util";
+import { ReactSVG }     from 'react-svg';
+import {createImageUrl} from "../../utils/createImageUrl.util";
 
-const SvgIcon = ({ name }) => {
-    return (
-        <ReactSVG
-            style={{ width: '100%',height: '100%',display: 'flex',justifyContent: 'center',alignItems: 'center' }}
-            src={createImageUrl(name)}
-        />
-    );
-};
+const SvgIcon = ({name, ...props}) => {
+    return <ReactSVG src={createImageUrl(name)} {...props}/>
+}
 
 export default SvgIcon;
