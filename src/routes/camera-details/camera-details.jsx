@@ -1,19 +1,22 @@
-
 import { useSelector } from 'react-redux';
 import { Fragment } from 'react';
+import {useParams} from "react-router-dom";
 
-import { getDetailsCamera } from '../../store/cameras/cameras.selector';
+import {getAllCameras} from "../../store/cameras/cameras.selector";
 
 import SvgIcon from '../../components/icon-svg/svg-icon.component';
 import { CameraUrlContainer,CameraDefaultContainer } from './camera-details.styles';
 
 const CameraDetails = () => {
-  const { url } = useSelector(getDetailsCamera);
+  const {id} = useParams();
+  const allCameras = useSelector(getAllCameras);
+  const cameraItem = allCameras.find((cam) => cam.id === id);
+
   return (
     <Fragment>
       {
-        url ?
-          <CameraUrlContainer style={{ backgroundImage: `url(${url})` }} ></CameraUrlContainer> :
+        cameraItem.url ?
+          <CameraUrlContainer style={{ backgroundImage: `url(${cameraItem.url})` }} ></CameraUrlContainer> :
           <CameraDefaultContainer> <SvgIcon name='no-camera-big-icon' /> </CameraDefaultContainer>
       }
     </Fragment>

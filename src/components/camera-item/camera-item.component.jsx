@@ -13,7 +13,7 @@ const CameraItem = ({ item }) => {
   const dispatch = useDispatch();
 
   const lookDetailsCamera = (item) => {
-    nav('details-camera');
+    nav(item.id);
     dispatch(setDetailsCamera(item));
 
   }
