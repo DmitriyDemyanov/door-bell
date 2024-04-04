@@ -14,8 +14,7 @@ export const WidgetItemContainer = styled.div`
   position: relative;
   border-radius: 3px;
   background: linear-gradient(180deg, #333333, #202020);
-  
-
+    
   .wrapper-bg{
     position: absolute;
     width: calc(100% + 2px);
@@ -28,8 +27,3 @@ export const WidgetItemContainer = styled.div`
     z-index: -1;
   }
 `
-
-
-
-
-

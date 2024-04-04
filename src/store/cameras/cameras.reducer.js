@@ -1,4 +1,4 @@
-
+import { CAMERAS_ACTION_TYPES } from "./cameras.types";
 
 const INITIAL_STATE = {
   allCameras: [
@@ -30,18 +30,22 @@ const INITIAL_STATE = {
       id: 'c-type',
       date: '1668618300000',
     },
-  ]
+  ],
+  detailsCamera: {},
 };
 
 export const camerasReducer = (state = INITIAL_STATE,action) => {
   const { type,payload } = action;
 
   switch (type) {
-  case '':
-  return {
-    ...state
-  }
+
+    case CAMERAS_ACTION_TYPES.SET_DETAILS_CAMERA:
+      return {
+        ...state,
+        detailsCamera:payload
+      }
+    
     default:
-return state
+      return state
   }
 }

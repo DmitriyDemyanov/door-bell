@@ -15,7 +15,7 @@ export const MainItemContainer = styled(Link)`
   &::before {
     content: '';
     position:absolute;
-    width: 162px;
+    width: 100%;
     height: 2px;
     left: 0;
     right: 0;
