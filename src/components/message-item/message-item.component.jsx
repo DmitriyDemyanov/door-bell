@@ -1,10 +1,7 @@
-
 import { useDispatch,useSelector } from "react-redux";
 
 import { setActiveMessage } from "../../store/messages/messages.action";
 import { getActiveMessage } from "../../store/messages/messages.selector";
-
-
 
 import SvgIcon from "../icon-svg/svg-icon.component";
 

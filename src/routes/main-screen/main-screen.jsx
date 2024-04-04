@@ -11,13 +11,12 @@ import { MainScreenContainer } from "./main-screen.styles";
 
 
 const MainScreen = () => {
-
-  const widgetsRender = useSelector(getWidgetsList);
-
+  const widgetsList = useSelector(getWidgetsList);
   const [currentPage,setCurrentPage] = useState(1);
   const totalItemsOnPage = 9;
-  const AllPages = Math.ceil(widgetsRender.length / totalItemsOnPage);
-  const pagination = widgetsRender.slice((currentPage - 1) * totalItemsOnPage,((currentPage - 1) * totalItemsOnPage) + totalItemsOnPage);
+  const AllPages = Math.ceil(widgetsList.length / totalItemsOnPage);
+  const pagination = widgetsList.slice((currentPage - 1) * totalItemsOnPage,((currentPage - 1) * totalItemsOnPage) + totalItemsOnPage);
+
   return (
     <MainScreenContainer>
       <div className="wrapper-default-settings" >

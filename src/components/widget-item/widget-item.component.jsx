@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch,useSelector } from "react-redux";
 
 import { getWidgetsList } from "../../store/widgets/widgets.selector";
-import { setAddedWidgets } from "../../store/widgets/widgets.actions";
+import { addWidget } from "../../store/widgets/widgets.actions";
 
 import {setModalTitle} from "../../store/modal/modal.action";
 
@@ -16,12 +16,12 @@ const WidgetItem = ({ item }) => {
     const widgetsList = useSelector(getWidgetsList);
     const dispatch = useDispatch();
 
-    const addWidget = (item) => {
+    const addWidgetToStore = (item) => {
         if (linkCorrection.includes(item.link)) {
             return nav(link);
         }
         if (!widgetsList.find((el) => el.id === item.id)) {
-            dispatch(setAddedWidgets(item));
+            dispatch(addWidget(item));
             dispatch(setModalTitle(title));
         }
     };
@@ -37,7 +37,7 @@ const WidgetItem = ({ item }) => {
     };
 
     return (
-        <WidgetItemContainer onClick={() => addWidget(item)}>
+        <WidgetItemContainer onClick={() => addWidgetToStore(item)}>
             <div className="widget-title"> {title} </div>
             <div className="wrapper-bg"></div>
             <div className="widget-icon">

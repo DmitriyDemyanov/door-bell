@@ -29,8 +29,7 @@ const ModalCommon = () => {
       className={isShow ? '' : 'hide'}
       onClick={() => dispatch(setIsShow(false))}
     >
-      <ModalCommonContainer
-      >
+      <ModalCommonContainer>
         <SvgIcon className="wrapper-icon" name={"modal-default-icon"}/>
         <div className="wrapper-title"> <span>{title}</span> widget added to home Screen </div>
       </ModalCommonContainer>

@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const MessageItemContainer = styled.div`
   width:100%;
   height: 92px;
-  margin-top: 16px;
+  margin-bottom: 16px;
   padding-left: 32px;
   padding-right: 5px;
   display: flex;

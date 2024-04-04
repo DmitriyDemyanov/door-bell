@@ -1,8 +1,6 @@
 import { useDispatch,useSelector } from "react-redux";
 
-import { getAllMessages } from "../../store/messages/messages.selector";
-import { getActiveMessage } from "../../store/messages/messages.selector";
-
+import { getAllMessages, getActiveMessage } from "../../store/messages/messages.selector";
 import { setActiveMessage } from "../../store/messages/messages.action";
 
 import MessageItem from "../../components/message-item/message-item.component";
@@ -15,7 +13,7 @@ const MessageScreen = () => {
   return (
     <MessageScreenContainer>
       <div
-        style={{ padding: '8px 32px 0' }}
+        style={{ padding: '24px 32px 0' }}
       >
         {
           allMessages.map((message,ind) => (<MessageItem title={message} key={ind} />))
