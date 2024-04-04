@@ -4,7 +4,7 @@ import { useDispatch,useSelector } from "react-redux";
 import { getWidgetsList } from "../../store/widgets/widgets.selector";
 import { addWidget } from "../../store/widgets/widgets.actions";
 
-import {setModalTitle} from "../../store/modal/modal.action";
+import { setModalSettings } from "../../store/modal/modal.action";
 
 import SvgIcon from "../icon-svg/svg-icon.component";
 import { WidgetItemContainer } from "./widget-item.styles";
@@ -16,13 +16,25 @@ const WidgetItem = ({ item }) => {
     const widgetsList = useSelector(getWidgetsList);
     const dispatch = useDispatch();
 
+    const dataSuccess = {
+        stringTitle: `${title} widget added to home Screen`,
+        type: 'info'
+    };
+    const dataAttention = {
+        stringTitle: `${title} widget already added`,
+        type: 'attention'
+    };
+
     const addWidgetToStore = (item) => {
         if (linkCorrection.includes(item.link)) {
             return nav(link);
         }
         if (!widgetsList.find((el) => el.id === item.id)) {
             dispatch(addWidget(item));
-            dispatch(setModalTitle(title));
+            dispatch(setModalSettings(dataSuccess));
+        }
+        else {
+            dispatch(setModalSettings(dataAttention));
         }
     };
 

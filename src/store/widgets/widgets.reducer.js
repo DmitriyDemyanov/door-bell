@@ -66,39 +66,39 @@ const INITIAL_STATE = {
 
     {
       icon: 'sleep-icon',
-      title: 'sleep mode',
+      title: 'Sleep Mode',
       name: 'sleep-mode',
       id: 7
     },
     {
       icon: 'audio-icon',
-      title: 'audio',
+      title: 'Audio',
       name: 'audio',
       id: 8
     },
     {
       icon: 'user-icon',
-      title: 'user',
+      title: 'User',
       name: 'user',
       id: 9
     },
 
     {
       icon: 'info-icon',
-      title: 'information',
+      title: 'Information',
       name: 'information',
       id: 11
     },
 
     {
       icon: 'system-icon',
-      title: 'system',
+      title: 'System',
       name: 'system',
       id: 13
     },
     {
       icon: 'language-icon',
-      title: 'language',
+      title: 'Language',
       name: 'language',
       id: 14
     },
@@ -107,20 +107,20 @@ const INITIAL_STATE = {
   allService: [
     {
       icon: 'cleaning-icon',
-      title: 'cleaning mode',
+      title: 'Cleaning Mode',
       name: 'cleaning-mode',
       link: '/cleaning-mode',
       id: 10
     },
     {
       icon: 'doors-icon',
-      title: 'doors',
+      title: 'Doors',
       name: 'doors',
       id: 12
     },
     {
       icon: 'transfers-icon',
-      title: 'transfers',
+      title: 'Transfers',
       name: 'transfers',
       id: 6
     },

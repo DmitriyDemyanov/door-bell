@@ -22,7 +22,7 @@ const HeaderCommon = () => {
   const { pathname } = useLocation();
   const [showCamera,setShowCamera] = useState(false);
   const detailsCamera = useSelector(getDetailsCamera);
-  console.log('pathname',pathname);
+  // console.log('pathname',pathname);
   useEffect(() => {
     if (pathname === '/cameras/details-camera') {
       setShowCamera(true);
