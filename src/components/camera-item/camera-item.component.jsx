@@ -15,7 +15,7 @@ const CameraItem = ({ item }) => {
   const lookDetailsCamera = (item) => {
     nav('details-camera');
     dispatch(setDetailsCamera(item));
-    
+
   }
   return (
     <CameraItemContainer
@@ -23,7 +23,7 @@ const CameraItem = ({ item }) => {
       onClick={() => lookDetailsCamera(item)}
     >
       <SvgIcon name='no-camera-small-icon' />
-      <div>{item.title}</div>
+      <div className={'camera-title'}>{item.title}</div>
     </CameraItemContainer>
   );
 };
