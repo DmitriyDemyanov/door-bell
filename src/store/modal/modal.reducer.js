@@ -11,7 +11,6 @@ export const modalReducer = (state = INITIAL_STATE,action) => {
   const { type,payload } = action;
   switch (type) {
     case MODAL_ACTIVE_TYPES.SET_MODAL_SETTINGS:
-      console.log('REDUCER>>>',payload)
       return {
         ...state,
         modalSettings: payload,

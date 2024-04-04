@@ -19,7 +19,7 @@ const renderTypeIcon = {
 
 const ModalCommon = () => {
   const dispatch = useDispatch();
-  const modalItem = useSelector(modalSettings);
+  const modalData = useSelector(modalSettings);
   const isShow = useSelector(modalIsShow);
 
   useEffect(() => {
@@ -38,8 +38,8 @@ const ModalCommon = () => {
       onClick={() => dispatch(setIsShow(false))}
     >
       <ModalCommonContainer>
-        <SvgIcon className="wrapper-icon" name={renderTypeIcon[modalItem?.type]} />
-        <div className="wrapper-title"> {modalItem?.title} </div>
+        <SvgIcon className="wrapper-icon" name={renderTypeIcon[modalData?.type]} />
+        <div className="wrapper-title"> {modalData?.title} </div>
       </ModalCommonContainer>
     </WrapperRenderModal>
 

@@ -1,6 +1,6 @@
 import { MODAL_ACTIVE_TYPES } from "./modal.types";
 
-export const setModalTitle = item => {
+export const setModalSettings = item => {
   const payload = {
     title: item.stringTitle,
     isShow: Boolean(item),
