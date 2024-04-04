@@ -133,7 +133,15 @@ export const widgetsReducer = (state = INITIAL_STATE,action) => {
 
     case WIDGETS_ACTION_TYPES.SET_ADDED_WIDGETS:
       const addedWidgets = [...state.addedWidgets,payload];
-      const widgetsList = [...DEFAULT_WIDGETS,...addedWidgets,ADD_BUTTON];
+
+      let widgetsList = [];
+      if (state.allSettings.length + state.allService.length > addedWidgets.length) {
+        widgetsList = [...DEFAULT_WIDGETS,...addedWidgets,ADD_BUTTON];
+      }
+      else {
+        widgetsList = [...DEFAULT_WIDGETS,...addedWidgets];
+      }
+
       saveWidgets(addedWidgets);
       return {
         ...state,
