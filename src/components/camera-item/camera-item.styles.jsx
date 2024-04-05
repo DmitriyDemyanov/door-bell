@@ -28,4 +28,12 @@ export const CameraItemContainer = styled.div`
         transform: translate(-50%, -50%);
         z-index: -1;
     }
+    .check-camera-svg{
+        svg{
+            width: 150px;
+            height: 150px;
+            z-index: 10;
+            opacity: 0.7;
+        }
+    }
 `

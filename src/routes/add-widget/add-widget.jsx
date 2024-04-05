@@ -5,6 +5,10 @@ import { AddWidgetContainer } from "./add-widget.styles";
 
 const widgetScreen = [
   {
+    title: 'Camera',
+    link: 'camera-add'
+  },
+  {
     title: 'Service',
     link: 'service'
   },

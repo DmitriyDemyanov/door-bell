@@ -31,6 +31,7 @@ function App() {
           <Route path="/message" element={<MessageScreen />} />
           <Route path="/cameras" element={<CamerasScreen />} />
           <Route path="/cameras/details-camera" element={<CameraDetails />} />
+          <Route path="add-widget/camera-add" element={<CamerasScreen />} />
         </Route>
       </Routes>
     </Fragment>

@@ -9,7 +9,7 @@ import { setModalSettings } from "../../store/modal/modal.action";
 import SvgIcon from "../icon-svg/svg-icon.component";
 import { WidgetItemContainer } from "./widget-item.styles";
 
-const linkCorrection = ['service','settings']
+const linkCorrection = ['service','settings','camera-add'];
 const WidgetItem = ({ item }) => {
     const { title,link } = item;
     const nav = useNavigate();

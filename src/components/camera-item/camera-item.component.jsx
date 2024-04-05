@@ -1,5 +1,5 @@
-
-import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import { useNavigate,useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
 import { setDetailsCamera } from '../../store/cameras/cameras.action';
@@ -9,19 +9,30 @@ import { CameraItemContainer } from "./camera-item.styles";
 
 
 const CameraItem = ({ item }) => {
+
+  const { pathname } = useLocation();
   const nav = useNavigate();
   const dispatch = useDispatch();
+  const [showCheck,seShowCheck] = useState(false);
 
-  const lookDetailsCamera = (item) => {
-    nav('details-camera');
-    dispatch(setDetailsCamera(item));
-
+  const cameraSettings = (pathname) => {
+    if (pathname === '/cameras') {
+      nav('details-camera');
+      dispatch(setDetailsCamera(item));
+    }
+    else {
+      seShowCheck(true);
+    }
   }
+
   return (
     <CameraItemContainer
       style={{ backgroundImage: `url(${item.url})` }}
-      onClick={() => lookDetailsCamera(item)}
+      onClick={() => cameraSettings(pathname)}
     >
+      {
+        showCheck ? (<SvgIcon className='check-camera-svg' name='check-icon' />) : ''
+      }
       <SvgIcon name='no-camera-small-icon' />
       <div className={'camera-title'}>{item.title}</div>
     </CameraItemContainer>
