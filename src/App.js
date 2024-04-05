@@ -13,7 +13,6 @@ import MessageScreen from "./routes/message-screen/message-screen.jsx";
 import CamerasScreen from "./routes/cameras/cameras-screen.js";
 import CameraDetails from "./routes/camera-details/camera-details.jsx";
 
-
 function App() {
   return (
     <Fragment>
