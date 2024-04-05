@@ -2,10 +2,11 @@ const getStatus = () => {
   return Math.ceil(Math.random() * 5) < 4;
 };
 
-export const sendUserMesage = (message) => {
+export const sendUserMessage = (message) => {
   return new Promise((resolve, reject) => {
     const status = getStatus();
     const result = {message,status};
+
     setTimeout(() => {
       if (status) {
         resolve(result);
@@ -13,6 +14,7 @@ export const sendUserMesage = (message) => {
         reject(new Error("Can't send message"));
       }
     }, 2000);
+
   })
 };
 
