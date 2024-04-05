@@ -14,13 +14,13 @@ import MessageScreen from "./routes/message-screen/message-screen.jsx";
 import CamerasScreen from "./routes/cameras/cameras-screen.js";
 import CameraDetails from "./routes/camera-details/camera-details.jsx";
 
-import {sendUserMessage} from "./utils/sendUserMesage";
+import { sendUserMessage } from "./utils/sendUserMessage";
 
 function App() {
   return (
     <Fragment>
       <ModalCommon />
-      <GlobalLoader/>
+      <GlobalLoader />
       <Routes>
         <Route path='/' element={<MainLayout />}>
           <Route index element={<MainScreen />} />
@@ -38,25 +38,25 @@ function App() {
 }
 
 // "then" case
-sendUserMessage("Hello guys")
-  .then(res => console.log("First Success: ", res))
-  .catch(err => console.log("First Error: ", err.message))
-  .finally(() => {
-    window.console.log("First Finally");
-  })
+// sendUserMessage("Hello guys")
+//   .then(res => console.log("First Success: ", res))
+//   .catch(err => console.log("First Error: ", err.message))
+//   .finally(() => {
+//     window.console.log("First Finally");
+//   })
 
-// "async" case
-const sendMessageToUser = async (message) => {
-  try {
-    const result = await sendUserMessage(message);
-    window.console.log("Second Success: ", result);
-  } catch (e) {
-    window.console.log("Second Error: ", e.message);
-  } finally {
-    window.console.log("Second Finally");
-  }
-}
+// // "async" case
+// const sendMessageToUser = async (message) => {
+//   try {
+//     const result = await sendUserMessage(message);
+//     window.console.log("Second Success: ", result);
+//   } catch (e) {
+//     window.console.log("Second Error: ", e.message);
+//   } finally {
+//     window.console.log("Second Finally");
+//   }
+// }
 
-sendMessageToUser("Second message");
+// sendMessageToUser("Second message");
 
 export default App;

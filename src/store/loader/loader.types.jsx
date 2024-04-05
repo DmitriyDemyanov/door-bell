@@ -1,0 +1,3 @@
+export const LOADER_ACTION_TYPES = {
+  SET_SHOW_LOADER: 'SET_SHOW_LOADER',
+};

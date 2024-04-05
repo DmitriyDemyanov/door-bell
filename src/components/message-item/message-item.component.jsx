@@ -3,8 +3,10 @@ import { useDispatch,useSelector } from "react-redux";
 import { setActiveMessage } from "../../store/messages/messages.action";
 import { getActiveMessage } from "../../store/messages/messages.selector";
 
+import { sendUserMessage } from "../../utils/sendUserMessage";
+
 import { setShowLoader } from "../../store/loader/loader.action";
-import { modalSettings } from "../../store/modal/modal.selector";
+import { setModalSettings } from "../../store/modal/modal.action";
 
 import SvgIcon from "../icon-svg/svg-icon.component";
 
@@ -12,20 +14,25 @@ import { MessageItemContainer } from "./message-item.styles";
 const MessageItem = ({ title }) => {
   const dispatch = useDispatch();
   const activeMessage = useSelector(getActiveMessage);
-  const checkActiveMessage = (title) => {
+  const sendMessage = async (title) => {
     dispatch(setShowLoader(true));
-    dispatch(modalSettings({ title,type: 'info' }));
-    setTimeout(() => {
-      dispatch(setActiveMessage(title));
+    try {
+      const res = await sendUserMessage(title);
+      dispatch(setModalSettings({ stringTitle: `The visitor received "${res.message}" message`,type: 'message' }));
+      dispatch(setActiveMessage(res.message));
+    }
+    catch (e) {
+      dispatch(setModalSettings({ stringTitle: 'Something went wrong, please try again later.',type: 'attention' }));
+    }
+    finally {
       dispatch(setShowLoader(false));
-      dispatch(modalSettings({ title: 'error',type: 'attention' }));
-    },3000)
 
+    }
   }
 
   return (
     <MessageItemContainer
-      onClick={() => checkActiveMessage(title)}
+      onClick={() => sendMessage(title)}
     >
       <div className="message-icon"> <SvgIcon name='message-item-icon' /> </div>
       <div className="message-title"> {title} </div>
