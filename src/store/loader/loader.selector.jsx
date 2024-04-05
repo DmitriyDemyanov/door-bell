@@ -1,0 +1,1 @@
+export const getShowLoader = (state) => state.loader.isShowLoader;

@@ -1,4 +1,8 @@
+import { loadFromLS, saveToLS } from "../../utils/localStorage.util";
+
+
 import { MESSAGES_ACTION_TYPES } from "./messages.types";
+
 
 const INITIAL_STATE = {
   allMessages: [
@@ -10,7 +14,7 @@ const INITIAL_STATE = {
     'Opened'
   ],
 
-  activeMessage: '',
+  activeMessage: loadFromLS('active-message'),
 }
 
 export const messagesReducer = (state = INITIAL_STATE,action) => {
@@ -18,6 +22,7 @@ export const messagesReducer = (state = INITIAL_STATE,action) => {
 
   switch (type) {
     case MESSAGES_ACTION_TYPES.SET_ACTIVE_MESSAGE:
+      saveToLS('active-message',payload);
       return {
         ...state,
         activeMessage: payload,

@@ -1,3 +1,5 @@
+import { loadFromLS,saveToLS } from "../../utils/localStorage.util";
+
 import { WIDGETS_ACTION_TYPES } from "./widgets.types";
 
 const DEFAULT_WIDGETS = [
@@ -31,14 +33,10 @@ const ADD_BUTTON = {
   id: 'add-button'
 };
 
-const loadWidgets = () => JSON.parse(localStorage.getItem("added-widgets")) || [];
-
-const saveWidgets = widgets => localStorage.setItem('added-widgets',JSON.stringify(widgets));
-
 const INITIAL_STATE = {
-  addedWidgets: loadWidgets(),
+  addedWidgets: loadFromLS('added-widgets') || [],
 
-  widgetsList: [...DEFAULT_WIDGETS,...loadWidgets(),ADD_BUTTON],
+  widgetsList: [...DEFAULT_WIDGETS,...loadFromLS('added-widgets') || [],ADD_BUTTON],
 
   footerWidgets: [
     {
@@ -142,7 +140,7 @@ export const widgetsReducer = (state = INITIAL_STATE,action) => {
         widgetsList = [...DEFAULT_WIDGETS,...addedWidgets];
       }
 
-      saveWidgets(addedWidgets);
+      saveToLS('added-widgets',addedWidgets);
       return {
         ...state,
         addedWidgets,
