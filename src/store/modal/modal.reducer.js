@@ -1,7 +1,7 @@
 import { MODAL_ACTIVE_TYPES } from "./modal.types";
 
 const INITIAL_STATE = {
-  modalSettings: null,
+  modalSettings: null, // {title: '', type: 'info'}
   isShow: false,
   type: null,
 

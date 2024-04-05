@@ -8,5 +8,5 @@ export const FooterContainer = styled.div`
   display: flex;
   justify-content: space-between;
   background-color: transparent;
- 
+  z-index: -1;
 `

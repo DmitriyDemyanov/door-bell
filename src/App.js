@@ -2,6 +2,7 @@ import { Routes,Route } from "react-router-dom";
 import { Fragment } from "react";
 
 import ModalCommon from "./components/modal-common/modal-common.component.jsx";
+import GlobalLoader from "./components/global-loader/global-loader.component.jsx";
 
 import MainLayout from "./routes/main-layout/main-layout";
 import MainScreen from "./routes/main-screen/main-screen.jsx";
@@ -19,6 +20,7 @@ function App() {
   return (
     <Fragment>
       <ModalCommon />
+      <GlobalLoader/>
       <Routes>
         <Route path='/' element={<MainLayout />}>
           <Route index element={<MainScreen />} />
