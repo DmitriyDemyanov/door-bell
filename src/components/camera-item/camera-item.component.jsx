@@ -13,7 +13,7 @@ const CameraItem = ({ item }) => {
   const { pathname } = useLocation();
   const nav = useNavigate();
   const dispatch = useDispatch();
-  const [showCheck,seShowCheck] = useState(false);
+  const [showCheck,setShowCheck] = useState(false);
 
   const cameraSettings = (pathname) => {
     if (pathname === '/cameras') {
@@ -21,7 +21,7 @@ const CameraItem = ({ item }) => {
       dispatch(setDetailsCamera(item));
     }
     else {
-      seShowCheck(true);
+      setShowCheck(true);
     }
   }
 
