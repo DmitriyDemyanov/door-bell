@@ -7,7 +7,6 @@ import { setModalSettings } from "../../store/modal/modal.action";
 
 import MessageItem from "../../components/message-item/message-item.component";
 import { MessageScreenContainer } from "./message-screen.styles";
-import { type } from "@testing-library/user-event/dist/type";
 
 const MessageScreen = () => {
   const allMessages = useSelector(getAllMessages);

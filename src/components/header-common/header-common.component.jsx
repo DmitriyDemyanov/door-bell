@@ -15,6 +15,7 @@ const settingTitle = {
   '/cleaning-mode': 'Please clean the Screen now',
   '/message': 'Message',
   '/cameras': 'Live cameras',
+  '/add-widget/camera-add': 'Add to Main Screen',
 }
 
 const HeaderCommon = () => {
@@ -39,11 +40,8 @@ const HeaderCommon = () => {
       return date
     }
     return time
-
-
   }
   setDate()
-
   return (
     <HeaderCommonContainer>
       <div className={pathname === '/cleaning-mode' ? 'hide' : ''} onClick={() => nav(-1)} > <SvgIcon name='arrow-left-icon' /> </div>

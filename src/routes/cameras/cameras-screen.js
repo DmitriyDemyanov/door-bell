@@ -9,6 +9,7 @@ import { CamerasScreenContainer,NoCamerasContainer } from "./cameras-screen.styl
 
 const CamerasScreen = () => {
   const allCameras = useSelector(getAllCameras);
+  
   return (
     <Fragment>
       {
