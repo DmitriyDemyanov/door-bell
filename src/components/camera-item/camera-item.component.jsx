@@ -15,7 +15,7 @@ const CameraItem = ({ item }) => {
   const dispatch = useDispatch();
   const [showCheck,setShowCheck] = useState(false);
 
-  const cameraSettings = (pathname) => {
+  const onCameraSelect = (pathname) => {
     if (pathname === '/cameras') {
       nav('details-camera');
       dispatch(setDetailsCamera(item));
@@ -28,7 +28,7 @@ const CameraItem = ({ item }) => {
   return (
     <CameraItemContainer
       style={{ backgroundImage: `url(${item.url})` }}
-      onClick={() => cameraSettings(pathname)}
+      onClick={() => onCameraSelect(pathname)}
     >
       {
         showCheck ? (<SvgIcon className='check-camera-svg' name='check-icon' />) : ''
