@@ -25,7 +25,6 @@ const CamerasScreen = () => {
             <div className="no-camera-title">No cameras available for your device </div>
           </NoCamerasContainer>
       }
-
     </Fragment>
   );
 };

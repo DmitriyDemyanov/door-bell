@@ -24,7 +24,7 @@ const MainScreen = () => {
           pagination.map((setting,ind) => (<MainItem item={setting} key={ind} />))
         }
       </div>
-      <div style={{ fontSize: '40px',textAlign: 'center' }} >
+      <div style={{ fontSize: '40px',textAlign: 'center',marginTop: '70px' }} >
         <span onClick={() => setCurrentPage(currentPage - 1)} > - </span>
         <span>{AllPages}</span>
         <span onClick={() => setCurrentPage(currentPage + 1)} > + </span>

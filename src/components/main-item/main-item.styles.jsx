@@ -27,7 +27,7 @@ export const MainItemContainer = styled(Link)`
   }
   
   .wrapper-icon {
-    padding: 36px 0 28px 0;
+    padding: 36px 0 10px 0;
     position: relative;
     img{
       width: 48px;
@@ -54,4 +54,21 @@ export const MainItemContainer = styled(Link)`
   .icon-cameras {
     background-image: url('/widgets-icon/cameras-icon.svg');
   }
+  .wrapper-main-title{
+    height: 72px;
+    display: flex;
+    align-items: center;
+   .main-item-title {
+      width: 100%;
+      font-size: 28px;
+      font-weight: 300;
+      line-height: 36px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2; /* количество строк */
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+ 
 `
