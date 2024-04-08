@@ -1,23 +1,20 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-export const WidgetItemContainer = styled.div`
-  width:100%;
+export const SettingItemContainer = styled.div`
+  width: 100%;
   height: 98px;
-  margin-top: 16px;
-  padding:0 32px;
+  padding: 0 32px;
   display: flex;
-  align-items:center;
+  align-items: center;
   justify-content: space-between;
   font-size: 32px;
   font-weight: 300;
-  text-transform: capitalize;
-  position: relative;
-  border-radius: 3px;
+  line-height: 42px;
   position: relative;
   border-radius: 3px;
   background: linear-gradient(180deg, #333333, #202020);
-    
-  .wrapper-bg{
+  ::after {
+    content: '';
     position: absolute;
     width: calc(100% + 2px);
     height: 96px;
