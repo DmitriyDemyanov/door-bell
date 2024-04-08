@@ -1,21 +1,25 @@
 import { useNavigate } from "react-router-dom";
 import { useDispatch,useSelector } from "react-redux";
 
+import { getCurrentLanguage } from "../../store/languages/languages.selector";
 import { getWidgetsList } from "../../store/widgets/widgets.selector";
 import { addWidget } from "../../store/widgets/widgets.actions";
 
 import { setModalSettings } from "../../store/modal/modal.action";
 
+import { setCurrentLanguage } from "../../store/languages/languages.action";
+
 import SvgIcon from "../icon-svg/svg-icon.component";
 import { WidgetItemContainer } from "./widget-item.styles";
 
-const linkCorrection = ['service','settings','camera-add'];
+const linkCorrection = ['service','settings','camera-add','general-settings','audio-preferences','video-preferences','user-manual','languages','call-history','Sleep-mode-behavior','walk-speed','system','audio-general','doorbell','visitor-call'
+];
 const WidgetItem = ({ item }) => {
     const { title,link } = item;
     const nav = useNavigate();
     const widgetsList = useSelector(getWidgetsList);
     const dispatch = useDispatch();
-
+    const currentLanguage = useSelector(getCurrentLanguage);
     const dataSuccess = {
         stringTitle: `${title} widget added to home Screen`,
         type: 'info'
@@ -25,6 +29,8 @@ const WidgetItem = ({ item }) => {
         type: 'attention'
     };
 
+
+    console.log('item.>>>>>',item)
     const addWidgetToStore = (item) => {
         if (linkCorrection.includes(item.link)) {
             return nav(link);
@@ -38,18 +44,31 @@ const WidgetItem = ({ item }) => {
         }
     };
 
+    const handlerItem = (item) => {
+        if (item.type === 'language' && item.id !== currentLanguage.id) {
+            return dispatch(setCurrentLanguage(item));
+        }
+        else if (item.type !== 'language') {
+            console.log('item',item)
+            addWidgetToStore(item);
+        }
+    }
+
     const renderedIcon = () => {
         if (linkCorrection.includes(link)) {
             return <div> <SvgIcon name='chevron-right-icon' /> </div>;
         }
-        if (widgetsList.find((el) => el.title === title)) {
+        if (widgetsList.find((el) => el.title === title || currentLanguage.id === item.id)) {
             return <div><SvgIcon name='check-icon' /></div>;
         }
-        return <div><SvgIcon name='plus-small-icon' /></div>;
+        if (item.type !== 'language') {
+            return <div><SvgIcon name='plus-small-icon' /></div>;
+        }
+
     };
 
     return (
-        <WidgetItemContainer onClick={() => addWidgetToStore(item)}>
+        <WidgetItemContainer onClick={() => handlerItem(item)}>
             <div className="widget-title"> {title} </div>
             <div className="wrapper-bg"></div>
             <div className="widget-icon">

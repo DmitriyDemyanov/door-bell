@@ -18,6 +18,13 @@ const settingTitle = {
   '/message': 'Message',
   '/cameras': 'Live cameras',
   '/add-widget/camera-add': 'Add to Main Screen',
+  '/main-settings': 'Settings',
+  '/main-settings/general-settings': 'General Settings',
+  '/main-settings/audio-preferences': 'Audio Preferences',
+  '/main-settings/languages': 'Languages',
+  '/main-settings/user-manual': 'User Manual',
+  '/main-settings/general-settings/call-history': 'Call History',
+
 }
 
 const HeaderCommon = () => {
@@ -28,9 +35,8 @@ const HeaderCommon = () => {
   const [showAddButton,setShowAddButton] = useState(true);
   const detailsCamera = useSelector(getDetailsCamera);
   const widgetsList = useSelector(getWidgetsList);
-  console.log('detailsCamera=>',detailsCamera);
-  console.log('widgetsList',widgetsList);
-  // console.log('pathname',pathname);
+
+  console.log('pathname>>>',pathname);
   useEffect(() => {
     if (pathname === '/cameras/details-camera') {
       setShowCamera(true);
@@ -72,7 +78,7 @@ const HeaderCommon = () => {
       </div>
       <div
         className={showCamera && showAddButton ? 'item-add' : 'hide'}
-        onClick={() => addCameraToWidgets(detailsCamera)} > <SvgIcon name='plus-small-icon' /> </div>
+        onClick={() => addCameraToWidgets(detailsCamera)} > <SvgIcon name='plus-small-icon' /></div>
     </HeaderCommonContainer>
   )
 };

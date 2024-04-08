@@ -13,6 +13,8 @@ import CleaningMode from "./routes/cleaning-mode/cleaning-mode.component.jsx";
 import MessageScreen from "./routes/message-screen/message-screen.jsx";
 import CamerasScreen from "./routes/cameras/cameras-screen.js";
 import CameraDetails from "./routes/camera-details/camera-details.jsx";
+import UserManual from "./routes/user-manual/user-manual.jsx";
+import CallHistory from "./routes/call-history/call-history.jsx";
 
 function App() {
   return (
@@ -30,6 +32,12 @@ function App() {
           <Route path="/message" element={<MessageScreen />} />
           <Route path="/cameras" element={<CamerasScreen />} />
           <Route path="/cameras/details-camera" element={<CameraDetails />} />
+          <Route path='/main-settings' element={<AddWidget />} />
+          <Route path='/main-settings/general-settings' element={<AddWidget />} />
+          <Route path='/main-settings/audio-preferences' element={<AddWidget />} />
+          <Route path='/main-settings/languages' element={<AddWidget />} />
+          <Route path='/main-settings/user-manual' element={<UserManual />} />
+          <Route path='/main-settings/general-settings/call-history' element={<CallHistory/>} />
         </Route>
       </Routes>
     </Fragment>

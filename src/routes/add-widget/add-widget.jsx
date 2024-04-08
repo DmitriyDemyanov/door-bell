@@ -1,3 +1,7 @@
+import { useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
+import { getMainSettings,getGeneralSettings,getAudioPreferences } from "../../store/settings/settings.selector";
+import { getLanguages,getCurrentLanguage } from '../../store/languages/languages.selector';
 
 import WidgetItem from "../../components/widget-item/widget-item.component";
 
@@ -18,10 +22,34 @@ const widgetScreen = [
   }
 ]
 const AddWidget = () => {
+  const { pathname } = useLocation();
+  const mainSettingsScreen = useSelector(getMainSettings);
+  const generalSettingsScreen = useSelector(getGeneralSettings);
+  const audioPreferences = useSelector(getAudioPreferences);
+
+  const languages = useSelector(getLanguages);
+ 
+  console.log('pathname',pathname);
+  const handlerScreenRender = () => {
+    if (pathname === '/main-settings') {
+      return mainSettingsScreen;
+    }
+    if (pathname === '/main-settings/general-settings') {
+      return generalSettingsScreen;
+    }
+    if (pathname === '/main-settings/audio-preferences') {
+      return audioPreferences;
+    }
+    if (pathname === '/main-settings/languages') {
+      return languages;
+    }
+    return widgetScreen;
+  }
+
   return (
     <AddWidgetContainer>
       {
-        widgetScreen.map((item,ind) => (<WidgetItem item={item} key={ind} />))
+        handlerScreenRender().map((item,ind) => (<WidgetItem item={item} key={ind} />))
       }
     </AddWidgetContainer>
   )
