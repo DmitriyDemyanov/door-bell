@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { getMainSettings,getGeneralSettings,getAudioPreferences } from "../../store/settings/settings.selector";
-import { getLanguages,getCurrentLanguage } from '../../store/languages/languages.selector';
+import { getLanguages } from '../../store/languages/languages.selector';
 
 import WidgetItem from "../../components/widget-item/widget-item.component";
 

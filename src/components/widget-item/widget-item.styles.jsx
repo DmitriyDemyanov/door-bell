@@ -13,8 +13,6 @@ export const WidgetItemContainer = styled.div`
   text-transform: capitalize;
   position: relative;
   border-radius: 3px;
-  position: relative;
-  border-radius: 3px;
   background: linear-gradient(180deg, #333333, #202020);
     
   .wrapper-bg{

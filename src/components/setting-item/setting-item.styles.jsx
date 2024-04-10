@@ -25,4 +25,5 @@ export const SettingItemContainer = styled.div`
     border-radius: 3px;
     z-index: -1;
   }
+  
 `

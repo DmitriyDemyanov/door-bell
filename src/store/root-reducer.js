@@ -6,6 +6,7 @@ import { camerasReducer } from './cameras/cameras.reducer';
 import { loaderReducer } from './loader/loader.reducer';
 import { settingsReducer } from './settings/settings.reducer';
 import { languagesReducer } from './languages/languages.reducer';
+import { callHistoryReducer } from './call-history/call-history.reducer';
 
 export const rootReducer = combineReducers({
   widgets: widgetsReducer,
@@ -15,4 +16,5 @@ export const rootReducer = combineReducers({
   loader: loaderReducer,
   settings: settingsReducer,
   languages: languagesReducer, 
+  'call-history': callHistoryReducer,
 });

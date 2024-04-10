@@ -49,7 +49,6 @@ const WidgetItem = ({ item }) => {
             return dispatch(setCurrentLanguage(item));
         }
         else if (item.type !== 'language') {
-            console.log('item',item)
             addWidgetToStore(item);
         }
     }

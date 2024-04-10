@@ -24,6 +24,10 @@ const settingTitle = {
   '/main-settings/languages': 'Languages',
   '/main-settings/user-manual': 'User Manual',
   '/main-settings/general-settings/call-history': 'Call History',
+  '/main-settings/general-settings/Sleep-mode-behavior': 'Sleep Mode Behavior',
+  '/main-settings/general-settings/walk-speed': 'Walk Speed',
+  '/main-settings/general-settings/system': 'System',
+  '/main-settings/video-preferences': 'Video Preferences',
 
 }
 

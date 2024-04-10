@@ -1,8 +1,6 @@
+import styled from 'styled-components';
 
-import styled from "styled-components";
-
-
-export const CallHistoryComponent = styled.div`
+export const SleepModeBehaviorContainer = styled.div`
   padding: 24px 32px 0;
   font-size: 24px;
   font-weight: 700;
@@ -21,12 +19,5 @@ export const CallHistoryComponent = styled.div`
     line-height: 28px;
     color: rgb(159, 159, 159);
   }
-  .call-history-bar {
-    margin: 32px 0;
-    width: 100%;
-    height: 1px;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0.0001) 0%, #FFFFFF 31.77%, #FFFFFF 69.79%, rgba(255, 255, 255, 0.0001) 100%);
-    opacity: 0.5;
-
-  }
+ 
 `

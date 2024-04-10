@@ -15,6 +15,10 @@ import CamerasScreen from "./routes/cameras/cameras-screen.js";
 import CameraDetails from "./routes/camera-details/camera-details.jsx";
 import UserManual from "./routes/user-manual/user-manual.jsx";
 import CallHistory from "./routes/call-history/call-history.jsx";
+import SleepModeBehavior from "./routes/sleep-mode/sleep-mode.jsx";
+import WalkSpeed from "./routes/walk-speed/walk-speed.jsx";
+import System from "./routes/system/system.jsx";
+import VideoPreferences from "./routes/video-preferences/video-preferences.jsx";
 
 function App() {
   return (
@@ -37,7 +41,11 @@ function App() {
           <Route path='/main-settings/audio-preferences' element={<AddWidget />} />
           <Route path='/main-settings/languages' element={<AddWidget />} />
           <Route path='/main-settings/user-manual' element={<UserManual />} />
-          <Route path='/main-settings/general-settings/call-history' element={<CallHistory/>} />
+          <Route path='/main-settings/general-settings/call-history' element={<CallHistory />} />
+          <Route path='/main-settings/general-settings/Sleep-mode-behavior' element={<SleepModeBehavior />} />
+          <Route path='/main-settings/general-settings/walk-speed' element={<WalkSpeed />} />
+          <Route path='/main-settings/general-settings/system' element={<System />} />
+          <Route path='/main-settings/video-preferences' element={<VideoPreferences/>} />
         </Route>
       </Routes>
     </Fragment>
