@@ -14,6 +14,7 @@ const System = () => {
     }
     dispatch(setShowLoader(true));
     setTimeout(() => {
+      // window.location.reload();
       dispatch(setShowLoader(false));
       nav('/');
     },3000)

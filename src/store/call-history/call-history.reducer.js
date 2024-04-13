@@ -1,7 +1,10 @@
 import { SET_ACTION_CALL_HISTORY } from "./call-history.types";
 
 const INITIAL_STATE = {
-  allCleanupInterval: ['12 Hours','24 Hours','1 Week','1 month'],
+  allCleanupInterval: {
+    title: 'Set Cleanup Interval',
+    setting: ['12 Hours','24 Hours','1 Week','1 month'],
+  },
   activeCleanupInterval: '24 Hours', //str
 };
 

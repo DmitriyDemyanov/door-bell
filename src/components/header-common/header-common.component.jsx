@@ -28,6 +28,9 @@ const settingTitle = {
   '/main-settings/general-settings/walk-speed': 'Walk Speed',
   '/main-settings/general-settings/system': 'System',
   '/main-settings/video-preferences': 'Video Preferences',
+  '/main-settings/audio-preferences/audio-general': 'General',
+  '/main-settings/audio-preferences/doorbell': 'Doorbell',
+  '/main-settings/audio-preferences/visitor-call': 'Visitor Call',
 
 }
 

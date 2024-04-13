@@ -10,6 +10,7 @@ line-height: 32px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 16px;
+    
   }
   .theme-item{
     padding: 32px 41px 0;
@@ -22,7 +23,8 @@ line-height: 32px;
     text-align: center;
     position: relative;
     border-radius: 3px;
-    background: linear-gradient(180deg, #333333, #202020);
+    background: var(--background-menu-item);
+    box-shadow: 0 -10px 30px -20px rgba(0,0,0,0.4);
     &::after {
       content: '';
       position: absolute;
@@ -55,11 +57,8 @@ line-height: 32px;
         width: 32px;
         height: 32px;
       }
-     
     }
   }
-
-
   .video-themes-bar {
     margin: 32px 0;
     width: 100%;

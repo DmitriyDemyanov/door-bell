@@ -23,7 +23,7 @@ export const MessageScreenContainer = styled.div`
       left: -2px;
       top: -2px;
       height: calc(100% + 2px);
-      background: radial-gradient(ellipse at top, rgba(255, 255, 255, 0.4) 20%, transparent 90%);
+      background: var(--background-border);
       z-index: -1;
     }
   }

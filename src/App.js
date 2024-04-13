@@ -1,6 +1,8 @@
 import { Routes,Route } from "react-router-dom";
 import { Fragment } from "react";
 
+import { loadFromLS } from './utils/localStorage.util.js';
+
 import ModalCommon from "./components/modal-common/modal-common.component.jsx";
 import GlobalLoader from "./components/global-loader/global-loader.component.jsx";
 
@@ -19,8 +21,11 @@ import SleepModeBehavior from "./routes/sleep-mode/sleep-mode.jsx";
 import WalkSpeed from "./routes/walk-speed/walk-speed.jsx";
 import System from "./routes/system/system.jsx";
 import VideoPreferences from "./routes/video-preferences/video-preferences.jsx";
+import AudioSettings from "./routes/audio-settings/audio-settings.jsx";
 
 function App() {
+  const theme = loadFromLS('app-theme');
+  document.body.setAttribute('data-theme',theme || 'dark');
   return (
     <Fragment>
       <ModalCommon />
@@ -45,7 +50,10 @@ function App() {
           <Route path='/main-settings/general-settings/Sleep-mode-behavior' element={<SleepModeBehavior />} />
           <Route path='/main-settings/general-settings/walk-speed' element={<WalkSpeed />} />
           <Route path='/main-settings/general-settings/system' element={<System />} />
-          <Route path='/main-settings/video-preferences' element={<VideoPreferences/>} />
+          <Route path='/main-settings/video-preferences' element={<VideoPreferences />} />
+          <Route path="/main-settings/audio-preferences/audio-general" element={<AudioSettings />} />
+          <Route path="/main-settings/audio-preferences/doorbell" element={<AudioSettings />} />
+          <Route path="/main-settings/audio-preferences/visitor-call" element={<AudioSettings />} />
         </Route>
       </Routes>
     </Fragment>

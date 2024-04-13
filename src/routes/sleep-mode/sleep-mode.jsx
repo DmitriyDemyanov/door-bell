@@ -2,22 +2,30 @@
 import SettingItem from "../../components/setting-item/setting-item";
 import { SleepModeBehaviorContainer } from "./sleep-mode.styles";
 
-const doorbell = ['Bell','Mute'];
-const visitorCall = ['Bell','Mute'];
+const doorbell =
+{
+  title: 'Doorbell',
+  settings: ['Bell','Mute'],
+}
+const visitorCall = {
+  title: 'Visitor Call',
+  settings: ['Bell','Mute'],
+}
+
 const SleepModeBehavior = () => {
   return (
     <SleepModeBehaviorContainer>
       <div> Sleep Mode Behavior  </div>
-      <div className='call-history-sub-title'> Doorbell </div>
+      <div className='call-history-sub-title'> {doorbell.title} </div>
       <div className="wrapper-setting-item">
         {
-          doorbell.map((title,ind) => (<SettingItem title={title} key={ind} />))
+          doorbell.settings.map((setting,ind) => (<SettingItem title={doorbell.title} setting={setting} key={ind} />))
         }
       </div>
-      <div className='call-history-sub-title'> Visitor Call </div>
+      <div className='call-history-sub-title'> {visitorCall.title} </div>
       <div className="wrapper-setting-item">
         {
-          visitorCall.map((title,ind) => (<SettingItem title={title} key={ind} />))
+          visitorCall.settings.map((setting,ind) => (<SettingItem title={visitorCall.title} setting={setting} key={ind} />))
         }
       </div>
     </SleepModeBehaviorContainer>

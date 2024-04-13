@@ -7,6 +7,7 @@ import { loaderReducer } from './loader/loader.reducer';
 import { settingsReducer } from './settings/settings.reducer';
 import { languagesReducer } from './languages/languages.reducer';
 import { callHistoryReducer } from './call-history/call-history.reducer';
+import { sleepModeReducer } from './sleep-mode/sleep-mode.reducer';
 
 export const rootReducer = combineReducers({
   widgets: widgetsReducer,
@@ -15,6 +16,7 @@ export const rootReducer = combineReducers({
   cameras: camerasReducer,
   loader: loaderReducer,
   settings: settingsReducer,
-  languages: languagesReducer, 
+  languages: languagesReducer,
   'call-history': callHistoryReducer,
+  'sleep-mode': sleepModeReducer,
 });

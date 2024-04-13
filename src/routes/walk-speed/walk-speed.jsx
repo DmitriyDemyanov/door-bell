@@ -11,7 +11,7 @@ const WalkSpeed = () => {
         </div>
       </div>
       <div className="wrapper-progress-bar">
-        <SvgIcon name='slider-call-history-icon' />
+        <SvgIcon name='slider-middle-icon' />
         <SvgIcon name='progress-walk-speed-icon' />
       </div>
     </WalkSpeedContainer>

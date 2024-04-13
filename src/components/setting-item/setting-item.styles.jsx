@@ -12,7 +12,7 @@ export const SettingItemContainer = styled.div`
   line-height: 42px;
   position: relative;
   border-radius: 3px;
-  background: linear-gradient(180deg, #333333, #202020);
+  background: var(--background-menu-item);
   ::after {
     content: '';
     position: absolute;
@@ -21,7 +21,7 @@ export const SettingItemContainer = styled.div`
     bottom: 3px;
     left: -1px;
     right: 0;
-    background:radial-gradient(ellipse at top, rgba(255, 255, 255, 0.4) 20%, transparent 90%);
+    background:var(--background-border);
     border-radius: 3px;
     z-index: -1;
   }

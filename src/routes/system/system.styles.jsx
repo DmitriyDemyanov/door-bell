@@ -32,7 +32,8 @@ export const SystemContainer = styled.div`
     text-transform: capitalize;
     position: relative;
     border-radius: 3px;
-    background: linear-gradient(180deg, #333333, #202020);
+    background: var(--background-menu-item);
+    box-shadow: 0 -10px 30px -20px rgba(0,0,0,0.4);
     &::after {
       content: '';
       position: absolute;
