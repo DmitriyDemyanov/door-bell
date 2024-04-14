@@ -24,12 +24,15 @@ body {
 			#6f0404 100%
 		) !important;
 	}
+	.accent-color {
+		color: #fff;
+	}
 	.item-bar {
 		margin: 32px 0;
-    width: 100%;
-    height: 1px;
-    background: var(--bg-item-bar);
-    opacity: 0.5;
+		width: 100%;
+		height: 1px;
+		background: var(--bg-item-bar);
+		opacity: 0.5;
 	}
 }
 
@@ -60,4 +63,10 @@ a {
 
 .fill-color-text {
 	fill: var(--color-main-font);
+}
+.stroke-color-text-default {
+	stroke: var(--color-camera-details-default);
+}
+.fill-color-text-default {
+	fill: var(--color-camera-details-default);
 }

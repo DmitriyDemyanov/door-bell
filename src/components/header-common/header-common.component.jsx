@@ -70,22 +70,30 @@ const HeaderCommon = () => {
     }
     return time;
   }
-  setDate()
+  setDate();
+
+  const setIconDependRoute = (iconName) => {
+    if (pathname === '/cameras/details-camera') {
+      return `white-${iconName}`;
+    }
+    return iconName;
+  }
 
   const addCameraToWidgets = (item) => {
     dispatch(addWidget(item));
   }
 
   return (
-    <HeaderCommonContainer>
-      <div className={pathname === '/cleaning-mode' ? 'hide' : ''} onClick={() => nav(-1)} > <SvgIcon name='arrow-left-icon' /> </div>
-      <div className="header-title">
+    <HeaderCommonContainer >
+      <div className={pathname === '/cameras/details-camera' ? 'different-bg' : ''}  ></div>
+      <div className={pathname === '/cleaning-mode' ? 'hide' : ''} onClick={() => nav(-1)} > <SvgIcon name={setIconDependRoute('arrow-left-icon')} /> </div>
+      <div className={`header-title ${pathname === '/cameras/details-camera' ? 'different-color' : ''}`}>
         {showCamera ? detailsCamera.title : settingTitle[pathname]}
         <div className={`${showCamera ? "header-date" : 'hide'}`}>{setDate('date')} <span className='vertical-slash'>|</span> {setDate('time')} </div>
       </div>
       <div
         className={showCamera && showAddButton ? 'item-add' : 'hide'}
-        onClick={() => addCameraToWidgets(detailsCamera)} > <SvgIcon name='plus-small-icon' /></div>
+        onClick={() => addCameraToWidgets(detailsCamera)} > <SvgIcon name={setIconDependRoute('plus-small-icon')} /></div>
     </HeaderCommonContainer>
   )
 };

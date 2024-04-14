@@ -42,7 +42,7 @@ const VideoPreferences = () => {
         </div>
 
       </div>
-      <div className='video-themes-bar' ></div>
+      <div className='item-bar' ></div>
       <div className="wrapper-bright-screen">
         <div>Screen Brightness</div>
         <SvgIcon name='audio-icon' />

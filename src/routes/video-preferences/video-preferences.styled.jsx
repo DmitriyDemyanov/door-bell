@@ -59,14 +59,6 @@ line-height: 32px;
       }
     }
   }
-  .video-themes-bar {
-    margin: 32px 0;
-    width: 100%;
-    height: 1px;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0.0001) 0%, #FFFFFF 31.77%, #FFFFFF 69.79%, rgba(255, 255, 255, 0.0001) 100%);
-    opacity: 0.5;
-  }
-
   .wrapper-bright-screen {
     display: flex;
     justify-content: space-between;
