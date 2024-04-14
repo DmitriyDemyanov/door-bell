@@ -1,0 +1,21 @@
+<svg width="132" height="200" viewBox="0 0 132 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="132" height="200" rx="2" transform="matrix(-1 0 0 1 132 0)" fill="#7B4646"/>
+<rect width="132" height="200" rx="2" transform="matrix(-1 0 0 1 132 0)" fill="url(#paint0_linear_4024_2800)"/>
+<rect width="101.6" height="21.4559" rx="2.3399" transform="matrix(-1 0 0 1 116.226 167.05)" fill="#920707"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M63.4704 25.2874C63.4704 24.0178 62.4066 22.9885 61.0944 22.9885H17.0464C15.7342 22.9885 14.6704 24.0178 14.6704 25.2874C14.6704 26.557 15.7342 27.5862 17.0464 27.5862H61.0944C62.4066 27.5862 63.4704 26.557 63.4704 25.2874Z" fill="#BDBDBD"/>
+<rect x="14.27" y="45.6897" width="44.5946" height="27.5862" rx="9" fill="#DEDEDE"/>
+<rect x="69.5674" y="57.7586" width="46.3784" height="7.75862" rx="3" fill="#DEDEDE"/>
+<rect x="69.5674" y="45.6897" width="27.6487" height="7.75862" rx="3" fill="#DEDEDE"/>
+<rect x="14.27" y="84.4828" width="44.5946" height="27.5862" rx="9" fill="#DEDEDE"/>
+<rect x="69.5674" y="95.6896" width="46.3784" height="7.75862" rx="3" fill="#DEDEDE"/>
+<rect x="69.5674" y="84.4828" width="27.6487" height="7.75862" rx="3" fill="#DEDEDE"/>
+<rect x="14.27" y="121.552" width="44.5946" height="27.5862" rx="9" fill="#DEDEDE"/>
+<rect x="69.5674" y="134.483" width="46.3784" height="7.75862" rx="3" fill="#DEDEDE"/>
+<rect x="69.5674" y="121.552" width="27.6487" height="7.75862" rx="3" fill="#DEDEDE"/>
+<defs>
+<linearGradient id="paint0_linear_4024_2800" x1="-70.2052" y1="89.1163" x2="105.796" y2="227.769" gradientUnits="userSpaceOnUse">
+<stop stop-color="#F5F5F5"/>
+<stop offset="1" stop-color="#E6E6E6"/>
+</linearGradient>
+</defs>
+</svg>

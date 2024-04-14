@@ -98,6 +98,7 @@ const INITIAL_STATE = {
       icon: 'language-icon',
       title: 'Language',
       name: 'language',
+      link: '/main-settings/languages',
       id: 14
     },
   ],

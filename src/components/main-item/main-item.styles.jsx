@@ -10,7 +10,7 @@ export const MainItemContainer = styled(Link)`
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0) 93.09%);
   border-radius: 5px;
   text-align: center;
-  
+  box-shadow: 0 -10px 30px -20px rgba(0,0,0,0.4);
 
   &::before {
     content: '';

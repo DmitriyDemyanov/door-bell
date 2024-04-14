@@ -12,7 +12,8 @@ export const MessageItemContainer = styled.div`
   font-weight: 700;
   position: relative;
   border-radius: 3px;
-  background: linear-gradient(180deg, #333333, #202020);
+  background: var(--background-menu-item);
+  box-shadow: 0 -10px 30px -20px rgba(0,0,0,0.4);
   .wrapper-bg{
     position: absolute;
     width: calc(100% + 2px);
@@ -20,7 +21,7 @@ export const MessageItemContainer = styled.div`
     bottom: 3px;
     left: -1px;
     right: 0;
-    background:radial-gradient(ellipse at top, rgba(255, 255, 255, 0.4) 20%, transparent 90%);
+    background:var(--background-border);
     border-radius: 3px;
     z-index: -1; 
   }

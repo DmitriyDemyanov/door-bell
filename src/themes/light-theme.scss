@@ -1,0 +1,22 @@
+body[data-theme='light'] {
+	--background-main: linear-gradient(180deg, #f4f4f4, #e8e8e8);
+	--background-active: #dc0000;
+	--background-modal: #3d4245;
+
+	--color-main-font: #000;
+	--color-main-font-opposite: #fff;
+
+	--background-border: radial-gradient(
+		ellipse at top,
+		#f4f4f4 20%,
+		transparent 90%
+	);
+	--background-menu-item: linear-gradient(
+		180deg,
+		rgb(243, 243, 243),
+		rgb(234, 234, 234)
+	);
+	--bg-camera-item: rgb(196, 196, 196);
+	--bg-item-bar: linear-gradient(90deg, rgba(73, 73, 73, 0.0001) 0%, #494949 31.77%, #494949 69.79%, rgba(73, 73, 73, 0.0001) 100%);
+
+}

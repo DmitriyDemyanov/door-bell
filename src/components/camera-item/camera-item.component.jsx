@@ -42,7 +42,10 @@ const CameraItem = ({ item }) => {
       {
         showCheck && pathname === '/add-widget/camera-add' ? (<SvgIcon className='check-camera-svg' name='check-icon' />) : ''
       }
-      <SvgIcon name='no-camera-small-icon' />
+      {
+        item.url ? '' : <SvgIcon name='no-camera-small-icon'/>
+      }
+
       <div className={'camera-title'}>{item.title}</div>
     </CameraItemContainer>
   );

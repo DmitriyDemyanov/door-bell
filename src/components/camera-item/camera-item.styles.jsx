@@ -7,12 +7,13 @@ export const CameraItemContainer = styled.div`
     font-size: 22px;
     font-weight: 700;
     line-height: 28px;
+    color: #fff;
     display: flex;
     align-items: end;
     border-radius: 3px;
     background-repeat: no-repeat;
     background-position: center;
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: var(--bg-camera-item);
     
     .camera-title {
         width: 100%;
@@ -26,7 +27,6 @@ export const CameraItemContainer = styled.div`
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        z-index: -1;
     }
     .check-camera-svg{
         svg{

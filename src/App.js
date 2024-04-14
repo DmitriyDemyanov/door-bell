@@ -1,6 +1,8 @@
 import { Routes,Route } from "react-router-dom";
 import { Fragment } from "react";
 
+import { loadFromLS } from './utils/localStorage.util.js';
+
 import ModalCommon from "./components/modal-common/modal-common.component.jsx";
 import GlobalLoader from "./components/global-loader/global-loader.component.jsx";
 
@@ -13,8 +15,17 @@ import CleaningMode from "./routes/cleaning-mode/cleaning-mode.component.jsx";
 import MessageScreen from "./routes/message-screen/message-screen.jsx";
 import CamerasScreen from "./routes/cameras/cameras-screen.js";
 import CameraDetails from "./routes/camera-details/camera-details.jsx";
+import UserManual from "./routes/user-manual/user-manual.jsx";
+import CallHistory from "./routes/call-history/call-history.jsx";
+import SleepModeBehavior from "./routes/sleep-mode/sleep-mode.jsx";
+import WalkSpeed from "./routes/walk-speed/walk-speed.jsx";
+import System from "./routes/system/system.jsx";
+import VideoPreferences from "./routes/video-preferences/video-preferences.jsx";
+import AudioSettings from "./routes/audio-settings/audio-settings.jsx";
 
 function App() {
+  const theme = loadFromLS('app-theme');
+  document.body.setAttribute('data-theme',theme || 'dark');
   return (
     <Fragment>
       <ModalCommon />
@@ -30,6 +41,19 @@ function App() {
           <Route path="/message" element={<MessageScreen />} />
           <Route path="/cameras" element={<CamerasScreen />} />
           <Route path="/cameras/details-camera" element={<CameraDetails />} />
+          <Route path='/main-settings' element={<AddWidget />} />
+          <Route path='/main-settings/general-settings' element={<AddWidget />} />
+          <Route path='/main-settings/audio-preferences' element={<AddWidget />} />
+          <Route path='/main-settings/languages' element={<AddWidget />} />
+          <Route path='/main-settings/user-manual' element={<UserManual />} />
+          <Route path='/main-settings/general-settings/call-history' element={<CallHistory />} />
+          <Route path='/main-settings/general-settings/Sleep-mode-behavior' element={<SleepModeBehavior />} />
+          <Route path='/main-settings/general-settings/walk-speed' element={<WalkSpeed />} />
+          <Route path='/main-settings/general-settings/system' element={<System />} />
+          <Route path='/main-settings/video-preferences' element={<VideoPreferences />} />
+          <Route path="/main-settings/audio-preferences/audio-general" element={<AudioSettings />} />
+          <Route path="/main-settings/audio-preferences/doorbell" element={<AudioSettings />} />
+          <Route path="/main-settings/audio-preferences/visitor-call" element={<AudioSettings />} />
         </Route>
       </Routes>
     </Fragment>
