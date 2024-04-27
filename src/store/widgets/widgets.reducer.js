@@ -64,8 +64,9 @@ const INITIAL_STATE = {
 
     {
       icon: 'sleep-icon',
-      title: 'Sleep Mode',
+      title: 'sleep Mode',
       name: 'sleep-mode',
+      link: '/services/set-sleep-mode',
       id: 7
     },
     {
@@ -108,7 +109,7 @@ const INITIAL_STATE = {
       icon: 'cleaning-icon',
       title: 'Cleaning Mode',
       name: 'cleaning-mode',
-      link: '/cleaning-mode',
+      link: '/services/cleaning-mode',
       id: 10
     },
     {
@@ -121,6 +122,7 @@ const INITIAL_STATE = {
       icon: 'transfers-icon',
       title: 'Transfers',
       name: 'transfers',
+      link: '/services/transfers',
       id: 6
     },
   ],

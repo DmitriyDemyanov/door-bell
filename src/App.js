@@ -40,11 +40,11 @@ function App() {
           <Route path="/add-widget/service" element={<AddService />} />
           <Route path="/add-widget/settings" element={<SettingsScreen />} />
           <Route path="/add-widget/camera-add" element={<CamerasScreen />} />
-          <Route path="/cleaning-mode" element={<CleaningMode />} />
+          <Route path="/services/cleaning-mode" element={<CleaningMode />} />
           <Route path="/message" element={<MessageScreen />} />
           <Route path="/cameras" element={<CamerasScreen />} />
           <Route path="/services" element={<ServicesScreen />} />
-          <Route path="/transfers" element={<Transfers />} />
+          <Route path="/services/transfers" element={<Transfers />} />
           <Route path="/services/set-sleep-mode" element={<SetSleepMode />} />
           <Route path="/cameras/details-camera" element={<CameraDetails />} />
           <Route path='/main-settings' element={<AddWidget />} />

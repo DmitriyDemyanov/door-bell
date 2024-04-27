@@ -7,11 +7,11 @@ const services = [
   },
   {
     title: 'cleaning Mode',
-    link: '/cleaning-mode',
+    link: 'cleaning-mode',
   },
   {
     title: 'Transfers',
-    link: '/transfers',
+    link: 'transfers',
   }
 ]
 
