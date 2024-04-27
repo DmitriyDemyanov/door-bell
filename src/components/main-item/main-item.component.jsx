@@ -14,7 +14,7 @@ const typesDefaultIcon = {
 
 const links = {
     camera: '/cameras/details-camera',
-    
+
 };
 
 const MainItem = ({ item }) => {

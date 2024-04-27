@@ -4,7 +4,7 @@ import { useNavigate } from "react-router";
 import { CleaningModeComponent } from "./cleaning-mode.styles";
 
 const CleaningMode = () => {
-  const [counter,setCounter] = useState(30);
+  const [counter,setCounter] = useState(10);
   const nav = useNavigate();
   useEffect(() => {
     if (counter <= 0) {

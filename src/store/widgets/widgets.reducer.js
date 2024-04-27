@@ -14,7 +14,7 @@ const DEFAULT_WIDGETS = [
   {
     icon: 'services-icon',
     title: 'services',
-    link: '/',
+    link: '/services',
     id: 'w-services',
     status: 'default'
   },

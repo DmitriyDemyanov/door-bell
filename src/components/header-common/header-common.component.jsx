@@ -17,6 +17,7 @@ const settingTitle = {
   '/cleaning-mode': 'Please clean the Screen now',
   '/message': 'Message',
   '/cameras': 'Live cameras',
+  '/services': 'Services',
   '/add-widget/camera-add': 'Add to Main Screen',
   '/main-settings': 'Settings',
   '/main-settings/general-settings': 'General Settings',
@@ -31,6 +32,8 @@ const settingTitle = {
   '/main-settings/audio-preferences/audio-general': 'General',
   '/main-settings/audio-preferences/doorbell': 'Doorbell',
   '/main-settings/audio-preferences/visitor-call': 'Visitor Call',
+  '/services/set-sleep-mode': 'Set the Sleep Mode time',
+  '/transfers': 'Transfers',
 
 }
 

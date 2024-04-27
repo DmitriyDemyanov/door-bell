@@ -37,7 +37,7 @@ export const ModalCommonContainer = styled.div`
     border-left: 1px solid rgba(151,151,151,0.2);
     display: flex;
     align-items: center;
-    color : var(--color-main-font-opposite);
+    color : #fff;
       span {
           display: contents;
           text-transform: capitalize;
