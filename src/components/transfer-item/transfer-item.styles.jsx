@@ -10,6 +10,7 @@ export const TransferItemContainer = styled.div`
   margin-bottom: 12px;
   background: var(--background-menu-item);
   padding: 32px;
+   box-shadow: 0 -10px 30px -20px rgba(0,0,0,0.4);
   &::after{
     content: '';
     position: absolute;
