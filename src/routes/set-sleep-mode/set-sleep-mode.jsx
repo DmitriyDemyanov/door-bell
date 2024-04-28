@@ -4,31 +4,38 @@ import WidgetItem from "../../components/widget-item/widget-item.component";
 const sleepModeTime = [
   {
     title: '1 hour',
-    link: '/'
+    link: '/',
+    type:'set-sleep-mode'
   },
   {
     title: '2 hour',
-    link: '/'
+    link: '/',
+    type:'set-sleep-mode'
   },
   {
     title: '3 hour',
-    link: '/'
+    link: '/',
+    type:'set-sleep-mode'
   },
   {
     title: '4 hour',
-    link: '/'
+    link: '/',
+    type:'set-sleep-mode'
   },
   {
     title: '8 hour',
-    link: '/'
+    link: '/',
+    type:'set-sleep-mode'
   },
   {
     title: '12 hour',
-    link: '/'
+    link: '/',
+    type:'set-sleep-mode'
   }
 ]
 
 const SetSleepMode = () => {
+ 
   return (
     <div style={{ padding: '0 32px' }} >
       {
