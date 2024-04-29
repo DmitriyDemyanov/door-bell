@@ -5,6 +5,7 @@ import { getCurrentLanguage } from "../../store/languages/languages.selector";
 import { getWidgetsList } from "../../store/widgets/widgets.selector";
 import { addWidget } from "../../store/widgets/widgets.actions";
 
+import { setSleepModeTimer,setShowSleepModal } from "../../store/sleep-mode/sleep-mode.action";
 import { setModalSettings } from "../../store/modal/modal.action";
 
 import { setCurrentLanguage } from "../../store/languages/languages.action";
@@ -12,7 +13,7 @@ import { setCurrentLanguage } from "../../store/languages/languages.action";
 import SvgIcon from "../icon-svg/svg-icon.component";
 import { WidgetItemContainer } from "./widget-item.styles";
 
-const linkCorrection = ['service','settings','camera-add','general-settings','audio-preferences','video-preferences','user-manual','languages','call-history','Sleep-mode-behavior','walk-speed','system','audio-general','doorbell','visitor-call'
+const linkCorrection = ['service','settings','camera-add','general-settings','audio-preferences','video-preferences','user-manual','languages','call-history','Sleep-mode-behavior','walk-speed','system','audio-general','doorbell','visitor-call','set-sleep-mode','cleaning-mode','transfers','/',
 ];
 const WidgetItem = ({ item }) => {
     const { title,link } = item;
@@ -30,7 +31,7 @@ const WidgetItem = ({ item }) => {
     };
 
 
-    console.log('item.>>>>>',item)
+
     const addWidgetToStore = (item) => {
         if (linkCorrection.includes(item.link)) {
             return nav(link);
@@ -45,6 +46,12 @@ const WidgetItem = ({ item }) => {
     };
 
     const handlerItem = (item) => {
+
+        if (item.type === 'set-sleep-mode') {
+            dispatch(setSleepModeTimer(item.title.slice(0,2) * 1000));
+            dispatch(setShowSleepModal(true));
+
+        }
         if (item.type === 'language' && item.id !== currentLanguage.id) {
             return dispatch(setCurrentLanguage(item));
         }

@@ -23,6 +23,7 @@ const MainItem = ({ item }) => {
     const activeMessage = useSelector(getActiveMessage);
 
     const handleClick = () => {
+        console.log('!!!')
         if (type === 'camera') {
             dispatch(setDetailsCamera(item));
         }

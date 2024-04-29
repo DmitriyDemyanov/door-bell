@@ -9,7 +9,6 @@ import GlobalLoader from "./components/global-loader/global-loader.component.jsx
 import MainLayout from "./routes/main-layout/main-layout";
 import MainScreen from "./routes/main-screen/main-screen.jsx";
 import AddWidget from "./routes/add-widget/add-widget.jsx";
-import ServiceScreen from "./routes/service-screen/service-screen.jsx";
 import SettingsScreen from "./routes/settings-screen/settings-screen.jsx";
 import CleaningMode from "./routes/cleaning-mode/cleaning-mode.component.jsx";
 import MessageScreen from "./routes/message-screen/message-screen.jsx";
@@ -22,6 +21,11 @@ import WalkSpeed from "./routes/walk-speed/walk-speed.jsx";
 import System from "./routes/system/system.jsx";
 import VideoPreferences from "./routes/video-preferences/video-preferences.jsx";
 import AudioSettings from "./routes/audio-settings/audio-settings.jsx";
+import AddService from "./routes/add-service/add-service.jsx";
+import ServicesScreen from "./routes/services-screen/services-screen.jsx";
+import SetSleepMode from "./routes/set-sleep-mode/set-sleep-mode.jsx";
+import Transfers from "./routes/transfers/transfers.jsx";
+import ModalSleepMode from "./components/modal-sleep-mode/modal-sleep-mode.component.jsx";
 
 function App() {
   const theme = loadFromLS('app-theme');
@@ -29,17 +33,21 @@ function App() {
   return (
     <Fragment>
       <ModalCommon />
+      <ModalSleepMode/>
       <GlobalLoader />
       <Routes>
         <Route path='/' element={<MainLayout />}>
           <Route index element={<MainScreen />} />
           <Route path='/add-widget' element={<AddWidget />} />
-          <Route path="/add-widget/service" element={<ServiceScreen />} />
+          <Route path="/add-widget/service" element={<AddService />} />
           <Route path="/add-widget/settings" element={<SettingsScreen />} />
           <Route path="/add-widget/camera-add" element={<CamerasScreen />} />
-          <Route path="/cleaning-mode" element={<CleaningMode />} />
+          <Route path="/services/cleaning-mode" element={<CleaningMode />} />
           <Route path="/message" element={<MessageScreen />} />
           <Route path="/cameras" element={<CamerasScreen />} />
+          <Route path="/services" element={<ServicesScreen />} />
+          <Route path="/services/transfers" element={<Transfers />} />
+          <Route path="/services/set-sleep-mode" element={<SetSleepMode />} />
           <Route path="/cameras/details-camera" element={<CameraDetails />} />
           <Route path='/main-settings' element={<AddWidget />} />
           <Route path='/main-settings/general-settings' element={<AddWidget />} />

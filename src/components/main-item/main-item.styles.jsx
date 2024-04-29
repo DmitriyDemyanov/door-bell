@@ -68,6 +68,7 @@ export const MainItemContainer = styled(Link)`
       -webkit-box-orient: vertical;
       overflow: hidden;
       text-overflow: ellipsis;
+      text-transform: capitalize;
     }
   }
  
