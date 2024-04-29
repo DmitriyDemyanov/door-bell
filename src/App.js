@@ -25,6 +25,7 @@ import AddService from "./routes/add-service/add-service.jsx";
 import ServicesScreen from "./routes/services-screen/services-screen.jsx";
 import SetSleepMode from "./routes/set-sleep-mode/set-sleep-mode.jsx";
 import Transfers from "./routes/transfers/transfers.jsx";
+import ModalSleepMode from "./components/modal-sleep-mode/modal-sleep-mode.component.jsx";
 
 function App() {
   const theme = loadFromLS('app-theme');
@@ -32,6 +33,7 @@ function App() {
   return (
     <Fragment>
       <ModalCommon />
+      <ModalSleepMode/>
       <GlobalLoader />
       <Routes>
         <Route path='/' element={<MainLayout />}>

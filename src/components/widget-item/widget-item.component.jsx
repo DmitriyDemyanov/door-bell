@@ -5,6 +5,7 @@ import { getCurrentLanguage } from "../../store/languages/languages.selector";
 import { getWidgetsList } from "../../store/widgets/widgets.selector";
 import { addWidget } from "../../store/widgets/widgets.actions";
 
+import { setSleepModeTimer,setShowSleepModal } from "../../store/sleep-mode/sleep-mode.action";
 import { setModalSettings } from "../../store/modal/modal.action";
 
 import { setCurrentLanguage } from "../../store/languages/languages.action";
@@ -30,6 +31,7 @@ const WidgetItem = ({ item }) => {
     };
 
 
+
     const addWidgetToStore = (item) => {
         if (linkCorrection.includes(item.link)) {
             return nav(link);
@@ -44,6 +46,12 @@ const WidgetItem = ({ item }) => {
     };
 
     const handlerItem = (item) => {
+
+        if (item.type === 'set-sleep-mode') {
+            dispatch(setSleepModeTimer(item.title.slice(0,2) * 1000));
+            dispatch(setShowSleepModal(true));
+
+        }
         if (item.type === 'language' && item.id !== currentLanguage.id) {
             return dispatch(setCurrentLanguage(item));
         }
@@ -53,7 +61,6 @@ const WidgetItem = ({ item }) => {
     }
 
     const renderedIcon = () => {
-        console.log('item:',item.name)
         if (linkCorrection.includes(link)) {
             return <div> <SvgIcon name='chevron-right-icon' /> </div>;
         }
