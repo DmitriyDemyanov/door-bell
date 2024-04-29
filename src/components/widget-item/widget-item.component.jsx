@@ -12,7 +12,7 @@ import { setCurrentLanguage } from "../../store/languages/languages.action";
 import SvgIcon from "../icon-svg/svg-icon.component";
 import { WidgetItemContainer } from "./widget-item.styles";
 
-const linkCorrection = ['service','settings','camera-add','general-settings','audio-preferences','video-preferences','user-manual','languages','call-history','Sleep-mode-behavior','walk-speed','system','audio-general','doorbell','visitor-call'
+const linkCorrection = ['service','settings','camera-add','general-settings','audio-preferences','video-preferences','user-manual','languages','call-history','Sleep-mode-behavior','walk-speed','system','audio-general','doorbell','visitor-call','set-sleep-mode','cleaning-mode','transfers','/',
 ];
 const WidgetItem = ({ item }) => {
     const { title,link } = item;
@@ -30,7 +30,6 @@ const WidgetItem = ({ item }) => {
     };
 
 
-    console.log('item.>>>>>',item)
     const addWidgetToStore = (item) => {
         if (linkCorrection.includes(item.link)) {
             return nav(link);
@@ -54,6 +53,7 @@ const WidgetItem = ({ item }) => {
     }
 
     const renderedIcon = () => {
+        console.log('item:',item.name)
         if (linkCorrection.includes(link)) {
             return <div> <SvgIcon name='chevron-right-icon' /> </div>;
         }

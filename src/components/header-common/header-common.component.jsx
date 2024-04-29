@@ -14,9 +14,10 @@ const settingTitle = {
   '/add-widget': 'Add to Main Screen',
   '/add-widget/service': 'Add Service',
   '/add-widget/settings': 'Add Settings',
-  '/cleaning-mode': 'Please clean the Screen now',
+  '/services/cleaning-mode': 'Please clean the Screen now',
   '/message': 'Message',
   '/cameras': 'Live cameras',
+  '/services': 'Services',
   '/add-widget/camera-add': 'Add to Main Screen',
   '/main-settings': 'Settings',
   '/main-settings/general-settings': 'General Settings',
@@ -31,6 +32,8 @@ const settingTitle = {
   '/main-settings/audio-preferences/audio-general': 'General',
   '/main-settings/audio-preferences/doorbell': 'Doorbell',
   '/main-settings/audio-preferences/visitor-call': 'Visitor Call',
+  '/services/set-sleep-mode': 'Set the Sleep Mode time',
+  '/services/transfers': 'Transfers',
 
 }
 
@@ -78,7 +81,7 @@ const HeaderCommon = () => {
 
   return (
     <HeaderCommonContainer>
-      <div className={pathname === '/cleaning-mode' ? 'hide' : ''} onClick={() => nav(-1)} > <SvgIcon name='arrow-left-icon' /> </div>
+      <div className={pathname === '/services/cleaning-mode' ? 'hide' : ''} onClick={() => nav(-1)} > <SvgIcon name='arrow-left-icon' /> </div>
       <div className="header-title">
         {showCamera ? detailsCamera.title : settingTitle[pathname]}
         <div className={`${showCamera ? "header-date" : 'hide'}`}>{setDate('date')} <span className='vertical-slash'>|</span> {setDate('time')} </div>

@@ -5,7 +5,7 @@ import { getAllServicesItems } from '../../store/widgets/widgets.selector';
 import WidgetItem from "../../components/widget-item/widget-item.component";
 import { ServiceScreenContainer } from "./service-screen-styles";
 
-const ServiceScreen = () => {
+const AddService = () => {
 
   const allServiceItems = useSelector(getAllServicesItems);
 
@@ -18,4 +18,4 @@ const ServiceScreen = () => {
   )
 };
 
-export default ServiceScreen;
+export default AddService;
