@@ -1,0 +1,1 @@
+export const getWeatherForecast = (state) => state.weather.forecast;

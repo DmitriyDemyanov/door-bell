@@ -59,6 +59,7 @@ const INITIAL_STATE = {
       icon: 'weather-icon',
       title: 'Overcast Clouds',
       name: 'weather',
+      link: 'weather',
       id: 5
     },
 

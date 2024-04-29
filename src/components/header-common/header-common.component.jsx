@@ -34,6 +34,7 @@ const settingTitle = {
   '/main-settings/audio-preferences/visitor-call': 'Visitor Call',
   '/services/set-sleep-mode': 'Set the Sleep Mode time',
   '/services/transfers': 'Transfers',
+  '/weather': 'Weather',
 
 }
 
