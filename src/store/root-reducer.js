@@ -8,6 +8,7 @@ import { settingsReducer } from './settings/settings.reducer';
 import { languagesReducer } from './languages/languages.reducer';
 import { callHistoryReducer } from './call-history/call-history.reducer';
 import { sleepModeReducer } from './sleep-mode/sleep-mode.reducer';
+import { transfersReducer } from './transfers/transfers.reducer';
 
 export const rootReducer = combineReducers({
   widgets: widgetsReducer,
@@ -19,4 +20,5 @@ export const rootReducer = combineReducers({
   languages: languagesReducer,
   'call-history': callHistoryReducer,
   'sleep-mode': sleepModeReducer,
+  transfers: transfersReducer,
 });

@@ -1,0 +1,3 @@
+export const TRANSFERS_ACTION_TYPES = {
+  SET_SHOW_MODAL: 'SET_SHOW_MODAL',
+};
