@@ -14,7 +14,7 @@ export const CameraDefaultContainer = styled.div`
   left: -24px;
   width: calc(100% + 48px);
   height: 521px;
-  background: rgba(255, 255, 255, 0.05);
+  background:var(--bg-camera-details-default);
   display: flex;
   align-items: center;
   justify-content: center;

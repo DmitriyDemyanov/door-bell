@@ -32,7 +32,7 @@ const MainItem = ({ item }) => {
         <MainItemContainer
             onClick={() => handleClick()}
             to={link ?? links[type]}
-            className={`${title === "Leave" ? "accent-bg" : ""} `}>
+            className={`${title === "Leave" ? "accent-bg accent-color" : ""} `}>
             <div className={`wrapper-icon ${icon === "plus-icon" ? "center" : ""} `}>
                 <SvgIcon name={icon || typesDefaultIcon[type]} />
                 <div className={title === 'message' && activeMessage ? 'info-marker' : ''}></div>

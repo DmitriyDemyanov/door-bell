@@ -1,7 +1,7 @@
 body[data-theme='light'] {
 	--background-main: linear-gradient(180deg, #f4f4f4, #e8e8e8);
 	--background-active: #dc0000;
-	--background-modal: #3d4245;
+	--background-modal: #858d91;
 	--background-modal-opposite: #f5f5f5;
 
 	--color-main-font: #000;
@@ -18,6 +18,27 @@ body[data-theme='light'] {
 		rgb(234, 234, 234)
 	);
 	--bg-camera-item: rgb(196, 196, 196);
-	--bg-item-bar: linear-gradient(90deg, rgba(73, 73, 73, 0.0001) 0%, #494949 31.77%, #494949 69.79%, rgba(73, 73, 73, 0.0001) 100%);
+	--bg-camera-details-default: rgba(191, 191, 191, 1);
+	--color-camera-details-default: #6A7174;
 
+
+	--bg-item-bar: linear-gradient(
+		90deg,
+		rgba(73, 73, 73, 0.0001) 0%,
+		#494949 31.77%,
+		#494949 69.79%,
+		rgba(73, 73, 73, 0.0001) 100%
+	);
+	.different-bg {
+		position: absolute;
+		top: 0;
+		left: -24px;
+		width: calc(100% + 48px);
+		height: 200px;
+		background:linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 8e-05) 100%);
+		z-index: -1;
+	}
+	.different-color {
+		color: #fff;
+	}
 }

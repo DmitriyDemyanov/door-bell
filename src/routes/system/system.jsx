@@ -28,7 +28,7 @@ const System = () => {
       </div>
       <div className="wrapper-system-buttons">
         <div className="system-button" onClick={() => handlerClick('reset')}>reset</div>
-        <div className="system-button accent-bg" onClick={() => handlerClick('reboot')}>reboot</div>
+        <div className="system-button accent-bg" style={{ color: 'white' }} onClick={() => handlerClick('reboot')}>reboot</div>
       </div>
     </SystemContainer>
   );

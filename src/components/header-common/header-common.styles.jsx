@@ -26,4 +26,5 @@ export const HeaderCommonContainer = styled.div`
   .item-add {
     margin-left: auto;
   }
+
 `

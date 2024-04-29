@@ -15,6 +15,7 @@ export const MessageScreenContainer = styled.div`
     text-align: center;
     align-items: center;
     padding: 0 12px;
+    color: #fff;
 
     &:before {
       content: "";
