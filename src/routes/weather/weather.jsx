@@ -2,6 +2,7 @@
 import { Fragment } from "react";
 import { useSelector } from "react-redux";
 
+import { setWeatherForecast,setWeatherCurrent } from "../../store/weather/weather.action";
 import { getWeatherForecast } from '../../store/weather/weather.selector';
 import WeatherItem from "../../components/weather-item/weather-item.component";
 import SvgIcon from '../../components/icon-svg/svg-icon.component'
@@ -9,6 +10,7 @@ import { WeatherContainer,WeatherFooter } from "./weather.styles";
 
 
 const Weather = () => {
+  
   const weatherForecast = useSelector(getWeatherForecast);
   console.log('weather',weatherForecast)
   return (

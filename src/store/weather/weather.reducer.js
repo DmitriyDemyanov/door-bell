@@ -1,7 +1,8 @@
 import { WEATHER_ACTION_TYPES } from "./weather.types";
 
 const INITIAL_STATE = {
-  forecast: ['test'],
+  forecast: [],
+  currentWeather: {},
 };
 
 export const weatherReducer = (state = INITIAL_STATE,action) => {
@@ -11,6 +12,11 @@ export const weatherReducer = (state = INITIAL_STATE,action) => {
       return {
         ...state,
         forecast: payload,
+      }
+    case WEATHER_ACTION_TYPES.SET_WEATHER_CURRENT:
+      return {
+        ...state,
+        currentWeather: payload,
       }
     default:
       return state;
