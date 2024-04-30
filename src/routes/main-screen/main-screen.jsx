@@ -1,7 +1,7 @@
-import { useSelector } from 'react-redux';
-import { useState } from 'react';
+import { useDispatch,useSelector } from 'react-redux';
+import { useEffect,useState } from 'react';
 
-
+import { fetchCurrentWeatherAsync } from '../../store/weather/weather.action';
 import { getWidgetsList } from '../../store/widgets/widgets.selector';
 
 import Footer from "../../components/footer/footer.component";
@@ -16,6 +16,10 @@ const MainScreen = () => {
   const totalItemsOnPage = 9;
   const AllPages = Math.ceil(widgetsList.length / totalItemsOnPage);
   const pagination = widgetsList.slice((currentPage - 1) * totalItemsOnPage,((currentPage - 1) * totalItemsOnPage) + totalItemsOnPage);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchCurrentWeatherAsync());
+  },[])
 
   return (
     <MainScreenContainer>

@@ -1,14 +1,18 @@
+import { setWeatherIcon } from "../../utils/setWeatherIcon.js";
 
 import SvgIcon from "../../components/icon-svg/svg-icon.component";
 import { WeatherItemContainer } from "./weather-item.styles";
-const WeatherItem = () => {
+const WeatherItem = ({ item }) => {
+
+  const { dt,main,weather } = item;
+  const setDate = () => new Date(dt * 1000).toLocaleString('en-GB',{ month: 'long',day: 'numeric' });
   return (
     <WeatherItemContainer>
-      <div className="weather-item-date">6 June</div>
+      <div className="weather-item-date">{setDate()}</div>
       <div className="weather-item-icon">
-        <SvgIcon name='weather-thunderstorms-icon' />
+        <SvgIcon name={setWeatherIcon(weather[0].icon)} />
       </div>
-      <div className="weather-item-degrees">29&deg;C</div>
+      <div className="weather-item-degrees"> {Math.round(main.temp)}&deg;C</div>
     </WeatherItemContainer>
   );
 };

@@ -56,9 +56,11 @@ const INITIAL_STATE = {
   ],
   allSettings: [
     {
-      icon: 'weather-icon',
-      title: 'Overcast Clouds',
+      icon: 'weather-sun-icon',
+      title: 'weather',
       name: 'weather',
+      forecast: 'Overcast Clouds Overcast Clo',
+      temp: '36',
       link: 'weather',
       id: 5
     },

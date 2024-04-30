@@ -39,7 +39,8 @@ export const WeatherContainer = styled.div`
     line-height: 180px;
   }
   .wrapper-weather-details {
-    width:39%;
+    
+    width:44%;
     margin: auto;
     .weather-icon{
       margin-right: 16px;

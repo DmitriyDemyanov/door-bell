@@ -70,6 +70,28 @@ export const MainItemContainer = styled(Link)`
       text-overflow: ellipsis;
       text-transform: capitalize;
     }
+    .weather-font-size {
+      /* padding: 0 8px 20px 14px; */
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 24px; 
+    }
+  }
+  .weather-temp{
+    padding-left: 14px;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 32px;
+    text-align: left;
+  }
+  .weather-icon-setting {
+    padding: 16px 16px 0 0;
+    display: flex;
+    justify-content: end; 
+    svg {
+      width: 44px;
+      height: 44px;
+    }
   }
  
 `
