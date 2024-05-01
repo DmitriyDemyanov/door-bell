@@ -2,11 +2,13 @@
 import { Fragment,useEffect } from "react";
 import { useDispatch,useSelector } from "react-redux";
 
+import { BounceLoader } from "react-spinners";
+
 import { setWeatherIcon } from "../../utils/setWeatherIcon";
 import { fetchWeatherForecastAsync } from "../../store/weather/weather.action";
 import { getWeatherForecast,getCurrentWeather } from "../../store/weather/weather.selector"
 
-import LocalSpinner from "../../components/local-spinner/local-spinner.component";
+// import LocalSpinner from "../../components/local-spinner/local-spinner.component";
 import WeatherItem from "../../components/weather-item/weather-item.component";
 import SvgIcon from '../../components/icon-svg/svg-icon.component'
 import { WeatherContainer,WeatherFooter,SpinnerPosition } from "./weather.styles";
@@ -60,7 +62,7 @@ const Weather = () => {
             </div>
 
           </div>
-        </WeatherContainer> : <h1>LOADER!!!</h1>
+        </WeatherContainer> : <BounceLoader color="#36d7b7" />
       }
       {
         forecastWeather?.length ?
@@ -70,7 +72,7 @@ const Weather = () => {
                 forecastWeather.map((el,ind) => (<WeatherItem item={el} key={ind} />))
               }
             </div>
-          </WeatherFooter> : <SpinnerPosition ><LocalSpinner /> </SpinnerPosition>
+          </WeatherFooter> : <SpinnerPosition ><BounceLoader color="#36d7b7" /> </SpinnerPosition>
       }
     </Fragment>
   );
@@ -78,4 +80,4 @@ const Weather = () => {
 
 export default Weather;
 
-//think #3 spinner styles!!!
+

@@ -84,8 +84,7 @@ export const WeatherFooter = styled.div`
 `
 export const SpinnerPosition = styled.div`
 position: absolute;
-top: 58.5%;
+bottom: 11%;
 left: 50%;
-transform: translateX(-50%);
-
+transform: translate(-50%, 50%);
 `

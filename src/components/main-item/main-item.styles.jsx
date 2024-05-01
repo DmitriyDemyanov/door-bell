@@ -87,9 +87,9 @@ export const MainItemContainer = styled(Link)`
     
     .spinner-weather{
       position: absolute;
-      top:0;
+      top:50%;
       left: 50%;
-      transform:translate(-50%, -50%);
+      transform:translate(-50%, 50%);
     }
   }
   .weather-icon-setting {

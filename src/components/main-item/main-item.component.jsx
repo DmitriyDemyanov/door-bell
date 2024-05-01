@@ -1,10 +1,11 @@
 import { useSelector,useDispatch } from "react-redux";
+import { BounceLoader } from "react-spinners";
 
 import { getActiveMessage } from "../../store/messages/messages.selector";
 import { setDetailsCamera } from "../../store/cameras/cameras.action";
 import { getCurrentWeather } from "../../store/weather/weather.selector";
 
-import LocalSpinner from "../local-spinner/local-spinner.component";
+// import LocalSpinner from "../local-spinner/local-spinner.component";
 import SvgIcon from "../icon-svg/svg-icon.component";
 
 import { MainItemContainer } from "./main-item.styles";
@@ -30,6 +31,7 @@ const makeClassNames = ({ icon,name }) => {
     }
     return classNames;
 }
+const showCurrentTemp = (temp) => temp ? `${temp}°C ` : false;
 
 const MainItem = ({ item }) => {
     const { icon,title,link,type } = item;
@@ -55,8 +57,10 @@ const MainItem = ({ item }) => {
             {
                 item.name === 'weather' ? <div className="weather-temp">
                     {
-                        Math.round(currentWeather.main?.temp) || <div className="spinner-weather"><LocalSpinner /></div>
-                    }&deg;C</div> : ''
+                        showCurrentTemp(Math.round(currentWeather.main?.temp)) ||
+                        <BounceLoader size={70} speedMultiplier={1.5} className="spinner-weather" />
+
+                    } </div> : ''
             }
             <div className="wrapper-main-title" >
                 <div className={`main-item-title ${item.name === 'weather' ? "weather-font-size" : ''}`}>
