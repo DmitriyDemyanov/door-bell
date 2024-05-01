@@ -9,7 +9,6 @@ import MainItem from "../../components/main-item/main-item.component";
 
 import { MainScreenContainer } from "./main-screen.styles";
 
-
 const MainScreen = () => {
   const widgetsList = useSelector(getWidgetsList);
   const [currentPage,setCurrentPage] = useState(1);

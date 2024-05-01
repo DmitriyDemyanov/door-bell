@@ -82,3 +82,10 @@ export const WeatherFooter = styled.div`
     align-items: center;
   }
 `
+export const SpinnerPosition = styled.div`
+position: absolute;
+top: 58.5%;
+left: 50%;
+transform: translateX(-50%);
+
+`

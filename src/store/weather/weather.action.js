@@ -11,7 +11,8 @@ export const fetchWeatherForecastAsync = () => async (dispatch) => {
   dispatch(fetchWeatherForecastStart())
   try {
     const forecast = await fetchForecast();
-    dispatch(fetchWeatherForecastSuccess(forecast));
+    const filterForecast = await forecast.list.filter((el) => el.dt_txt.slice((el.dt_txt.indexOf(' ') + 1),el.dt_txt.length) === '15:00:00')
+    dispatch(fetchWeatherForecastSuccess(filterForecast));
   }
   catch (error) {
     dispatch(fetchWeatherForecastError(error))

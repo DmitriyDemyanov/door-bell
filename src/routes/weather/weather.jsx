@@ -6,10 +6,10 @@ import { setWeatherIcon } from "../../utils/setWeatherIcon";
 import { fetchWeatherForecastAsync } from "../../store/weather/weather.action";
 import { getWeatherForecast,getCurrentWeather } from "../../store/weather/weather.selector"
 
-
+import LocalSpinner from "../../components/local-spinner/local-spinner.component";
 import WeatherItem from "../../components/weather-item/weather-item.component";
 import SvgIcon from '../../components/icon-svg/svg-icon.component'
-import { WeatherContainer,WeatherFooter } from "./weather.styles";
+import { WeatherContainer,WeatherFooter,SpinnerPosition } from "./weather.styles";
 
 
 const Weather = () => {
@@ -23,9 +23,10 @@ const Weather = () => {
   }
   setCurrentDate()
   const forecastWeather = useSelector(getWeatherForecast);
-  const filterForecast = forecastWeather.list?.filter((el) => el.dt_txt.slice((el.dt_txt.indexOf(' ') + 1),el.dt_txt.length) === '15:00:00');
-  // const allForecastItem = Object.assign(filterForecast,{ wind,dt,weather,main });
-  // console.log('allForecastItem---->>',allForecastItem)
+  // const filterForecast = forecastWeather.list?.filter((el) => el.dt_txt.slice((el.dt_txt.indexOf(' ') + 1),el.dt_txt.length) === '15:00:00');
+
+
+
   useEffect(() => {
     dispatch(fetchWeatherForecastAsync());
   },[]);
@@ -40,7 +41,7 @@ const Weather = () => {
             <SvgIcon name={setWeatherIcon(currentWeather.weather[0].icon)} />
           </div>
           <div className="weather-subtitle"> {weather[0].description}</div>
-          <div className="weather-temperature"> {Math.round(main.temp)}&deg;C</div>
+          <div className="weather-temperature"> {Math.round(main?.temp)}&deg;C</div>
 
           <div className="wrapper-weather-details">
 
@@ -61,24 +62,20 @@ const Weather = () => {
           </div>
         </WeatherContainer> : <h1>LOADER!!!</h1>
       }
-
-
       {
-        filterForecast?.length ?
+        forecastWeather?.length ?
           <WeatherFooter>
             <div className="wrapper-footer-items">
-              <WeatherItem item={currentWeather} />
               {
-                filterForecast.map((el,ind) => (<WeatherItem item={el} key={ind} />))
+                forecastWeather.map((el,ind) => (<WeatherItem item={el} key={ind} />))
               }
-
             </div>
-
-          </WeatherFooter> : <h2>forecastWeather!!!!</h2>
+          </WeatherFooter> : <SpinnerPosition ><LocalSpinner /> </SpinnerPosition>
       }
-
     </Fragment>
   );
 };
 
 export default Weather;
+
+//think #3 spinner styles!!!

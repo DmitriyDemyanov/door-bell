@@ -78,11 +78,19 @@ export const MainItemContainer = styled(Link)`
     }
   }
   .weather-temp{
+    position: relative;
     padding-left: 14px;
     font-size: 32px;
     font-weight: 400;
     line-height: 32px;
     text-align: left;
+    
+    .spinner-weather{
+      position: absolute;
+      top:0;
+      left: 50%;
+      transform:translate(-50%, -50%);
+    }
   }
   .weather-icon-setting {
     padding: 16px 16px 0 0;
