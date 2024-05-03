@@ -1,12 +1,17 @@
 import { WEATHER_ACTION_TYPES } from "./weather.types";
+import { saveToLS,loadFromLS } from "../../utils/localStorage.util";
 
 const INITIAL_STATE = {
   forecast: [],
-  currentWeather: {},
+  currentWeather: loadFromLS('current-weather') || {},
   isForecastLoading: false,
   isCurrentWeatherLoading: false,
   error: null,
+  timeFetchWeather: loadFromLS('timeLastFetchWeather') || 0,
+  timeFetchForecast: loadFromLS('time-forecast') || 0,
+
 };
+
 
 export const weatherReducer = (state = INITIAL_STATE,action) => {
   const { type,payload } = action;
@@ -18,6 +23,7 @@ export const weatherReducer = (state = INITIAL_STATE,action) => {
         isForecastLoading: true,
       }
     case WEATHER_ACTION_TYPES.FETCH_WEATHER_FORECAST_SUCCESS:
+      saveToLS('forecast',payload);
       return {
         ...state,
         forecast: payload,
@@ -29,6 +35,13 @@ export const weatherReducer = (state = INITIAL_STATE,action) => {
         error: payload,
         isForecastLoading: false,
       }
+    case WEATHER_ACTION_TYPES.TIME_FETCH_FORECAST:
+      // saveToLS('time-forecast',payload);
+      return {
+        ...state,
+        timeFetchForecast: payload
+      }
+
 
 
     case WEATHER_ACTION_TYPES.FETCH_WEATHER_CURRENT_START:
@@ -37,6 +50,7 @@ export const weatherReducer = (state = INITIAL_STATE,action) => {
         isCurrentWeatherLoading: true,
       }
     case WEATHER_ACTION_TYPES.FETCH_WEATHER_CURRENT_SUCCESS:
+      saveToLS('current-weather',payload);
       return {
         ...state,
         isCurrentWeatherLoading: false,
@@ -48,6 +62,13 @@ export const weatherReducer = (state = INITIAL_STATE,action) => {
         error: payload,
         isCurrentWeatherLoading: false,
       }
+    case WEATHER_ACTION_TYPES.TIME_FETCH_WEATHER:
+      // saveToLS('timeLastFetchWeather',payload);
+      return {
+        ...state,
+        timeFetchWeather: payload
+      }
+
     default:
       return state;
   }

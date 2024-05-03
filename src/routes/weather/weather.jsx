@@ -4,18 +4,21 @@ import { useDispatch,useSelector } from "react-redux";
 
 import { BounceLoader } from "react-spinners";
 
-import { setWeatherIcon } from "../../utils/setWeatherIcon";
-import { fetchWeatherForecastAsync } from "../../store/weather/weather.action";
-import { getWeatherForecast,getCurrentWeather } from "../../store/weather/weather.selector"
+import { loadFromLS,saveToLS } from "../../utils/localStorage.util";
 
-// import LocalSpinner from "../../components/local-spinner/local-spinner.component";
+import { setWeatherIcon } from "../../utils/setWeatherIcon";
+import { fetchWeatherForecastAsync,fetchWeatherForecastSuccess,setTimeForecast } from "../../store/weather/weather.action";
+import { getWeatherForecast,getCurrentWeather,getTimeForecast } from "../../store/weather/weather.selector"
+
 import WeatherItem from "../../components/weather-item/weather-item.component";
 import SvgIcon from '../../components/icon-svg/svg-icon.component'
 import { WeatherContainer,WeatherFooter,SpinnerPosition } from "./weather.styles";
 
 
+
 const Weather = () => {
   const dispatch = useDispatch();
+  const timeFetchForecast = useSelector(getTimeForecast);
 
   const currentWeather = useSelector(getCurrentWeather);
   const { name,wind,dt,weather,main } = currentWeather;
@@ -24,13 +27,22 @@ const Weather = () => {
     return new Date(dt * 1000).toLocaleString('en-US',{ weekday: 'long',month: 'long',day: 'numeric' });
   }
   setCurrentDate()
+
   const forecastWeather = useSelector(getWeatherForecast);
-  // const filterForecast = forecastWeather.list?.filter((el) => el.dt_txt.slice((el.dt_txt.indexOf(' ') + 1),el.dt_txt.length) === '15:00:00');
 
 
 
   useEffect(() => {
-    dispatch(fetchWeatherForecastAsync());
+    console.log('timeFetchForecast_before',timeFetchForecast,)
+    if (Date.now() - timeFetchForecast > 180000 || !forecastWeather.length) {
+      dispatch(fetchWeatherForecastAsync());
+      dispatch(setTimeForecast(Date.now()));
+      saveToLS('time-forecast',Date.now());
+    }
+    else {
+      dispatch(fetchWeatherForecastSuccess(loadFromLS('forecast')));
+    }
+
   },[]);
 
   return (

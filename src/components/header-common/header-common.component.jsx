@@ -47,7 +47,6 @@ const HeaderCommon = () => {
   const detailsCamera = useSelector(getDetailsCamera);
   const widgetsList = useSelector(getWidgetsList);
 
-  console.log('pathname>>>',pathname);
   useEffect(() => {
     if (pathname === '/cameras/details-camera') {
       setShowCamera(true);
