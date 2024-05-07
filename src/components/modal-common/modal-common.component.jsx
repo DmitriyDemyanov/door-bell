@@ -12,7 +12,7 @@ let timer = null;
 
 const renderTypeIcon = {
   door: 'door-icon',
-  message: 'message-item-icon',
+  message: 'white-message-item-icon',
   attention: 'attention-icon',
   info: 'modal-default-icon'
 };
