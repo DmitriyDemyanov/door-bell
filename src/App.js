@@ -26,6 +26,7 @@ import ServicesScreen from "./routes/services-screen/services-screen.jsx";
 import SetSleepMode from "./routes/set-sleep-mode/set-sleep-mode.jsx";
 import Transfers from "./routes/transfers/transfers.jsx";
 import ModalSleepMode from "./components/modal-sleep-mode/modal-sleep-mode.component.jsx";
+import Weather from './routes/weather/weather.jsx';
 
 function App() {
   const theme = loadFromLS('app-theme');
@@ -46,6 +47,7 @@ function App() {
           <Route path="/message" element={<MessageScreen />} />
           <Route path="/cameras" element={<CamerasScreen />} />
           <Route path="/services" element={<ServicesScreen />} />
+          <Route path="weather" element={<Weather/>} />
           <Route path="/services/transfers" element={<Transfers />} />
           <Route path="/services/set-sleep-mode" element={<SetSleepMode />} />
           <Route path="/cameras/details-camera" element={<CameraDetails />} />

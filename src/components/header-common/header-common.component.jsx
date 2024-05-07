@@ -34,6 +34,7 @@ const settingTitle = {
   '/main-settings/audio-preferences/visitor-call': 'Visitor Call',
   '/services/set-sleep-mode': 'Set the Sleep Mode time',
   '/services/transfers': 'Transfers',
+  '/weather': 'Weather',
 
 }
 
@@ -46,7 +47,6 @@ const HeaderCommon = () => {
   const detailsCamera = useSelector(getDetailsCamera);
   const widgetsList = useSelector(getWidgetsList);
 
-  console.log('pathname>>>',pathname);
   useEffect(() => {
     if (pathname === '/cameras/details-camera') {
       setShowCamera(true);

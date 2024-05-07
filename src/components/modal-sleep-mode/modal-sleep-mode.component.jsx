@@ -13,12 +13,14 @@ const ModalSleepMode = () => {
   const dispatch = useDispatch();
   const showSleepModal = useSelector(getShowSleepModal);
   const sleepModeTimer = useSelector(getSleepModeTimer);
+
   if (showSleepModal) {
     clearTimeout(timer);
     timer = setTimeout(() => {
       dispatch(setShowSleepModal(false))
-    },sleepModeTimer)
-  }
+    },sleepModeTimer);
+  };
+
   return (
     <div>
       {
@@ -30,7 +32,7 @@ const ModalSleepMode = () => {
                 <SvgIcon name='sleep-icon' />
               </div>
               <div className="description-sleep-mode">
-                To turn off Sleep Mode from the terminal, tap the Screen <span>{sleepModeTimer / 1000}</span>  times
+                To turn off Sleep Mode from the terminal, tap the Screen 2 times
               </div>
             </ModalSleepModeContent>
           </div>) : ''

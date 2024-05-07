@@ -3,6 +3,11 @@ body[data-theme='light'] {
 	--background-active: #dc0000;
 	--background-modal: #858d91;
 	--background-modal-opposite: #f5f5f5;
+	--background-otherwise-page: linear-gradient(
+		180deg,
+		#ececec 20.39%,
+		#f9f9f9 63.81%
+	);
 
 	--color-main-font: #000;
 	--color-main-font-opposite: #fff;

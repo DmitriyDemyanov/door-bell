@@ -1,5 +1,4 @@
 import { loadFromLS,saveToLS } from "../../utils/localStorage.util";
-
 import { WIDGETS_ACTION_TYPES } from "./widgets.types";
 
 const DEFAULT_WIDGETS = [
@@ -56,9 +55,12 @@ const INITIAL_STATE = {
   ],
   allSettings: [
     {
-      icon: 'weather-icon',
-      title: 'Overcast Clouds',
+      icon: 'weather-sun-icon',
+      title: 'weather',
       name: 'weather',
+      forecast: 'Overcast Clouds Overcast Clo',
+      temp: '38',
+      link: 'weather',
       id: 5
     },
 

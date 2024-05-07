@@ -30,8 +30,6 @@ const WidgetItem = ({ item }) => {
         type: 'attention'
     };
 
-
-
     const addWidgetToStore = (item) => {
         if (linkCorrection.includes(item.link)) {
             return nav(link);
